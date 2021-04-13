@@ -18,7 +18,7 @@ if (isset($_POST['upload-btn']) && $_POST['upload-btn'] == 'Guardar') {
         $fileExtension = strtolower(end($fileNameCmps));
 
         // sanitize file-name
-        $newFileName =  $fileName . '.' . $fileExtension;
+        $newFileName =  $fileName;
 
         // check if file has one of the following extensions
         $allowedfileExtensions = array('jpg', 'jpeg', 'gif', 'png');
