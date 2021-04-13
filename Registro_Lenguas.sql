@@ -1,2322 +1,4634 @@
-DROP TABLE IF EXISTS `Registro_lengua`;
-CREATE TABLE `Registro_lengua`(
-  `id` int(11) NOT NULL,
-  `lengua` varchar(60) NOT NULL COMMENT 'NOM_LEN - Nombre de la lengua',
-  `nombre` varchar(60) NOT NULL COMMENT 'NOM_LEN - Nombre de la lengua',
-  `estado` varchar(15) NOT NULL COMMENT 'NOM_EST - Nombre del estado',
-   `municipio` varchar(60) NOT NULL COMMENT 'NOM_MUN  Nombre del municipio '
+DROP TABLE IF EXISTS `lenguas`;
+CREATE TABLE `lenguas`(
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `lengua` varchar(128) NOT NULL COMMENT 'NOM_LEN - Nombre de la lengua',
+  `nombre` varchar(128) NOT NULL COMMENT 'NOM_LEN - Nombre de la lengua',
+  `estado` varchar(128) NOT NULL COMMENT 'NOM_EST - Nombre del estado',
+   `municipio` varchar(128) NOT NULL COMMENT 'NOM_MUN  Nombre del municipio '
   );
-insert into `Registro_lengua` (`id`,`lengua`, `nombre`, `estado`, `municipio`) VALUES
-(1, 'Akateko', 'Akateko', 'Campeche', 'Champotón'),
-(1, 'Akateko', 'Akateko', 'Chiapas', 'Frontera Comalapa'),
-(1, 'Akateko', 'Akateko', 'Chiapas', 'La Trinitaria'),
-(1, 'Akateko', 'Akateko', 'Quintana Roo', 'Othón P. Blanco'),
-(2, 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Tlacoachistlahuaca'),
-(2, 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Xochistlahuaca'),
-(3, 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Tlacoachistlahuaca'),
-(3, 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Xochistlahuaca'),
-(4, 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Tlacoachistlahuaca'),
-(4, 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Xochistlahuaca'),
-(5, 'Amuzgo', 'Amuzgo del sur','Guerrero', 'Azoyú'),
-(5, 'Amuzgo', 'Amuzgo del sur','Guerrero', 'Cuajinicuilapa'),
-(5, 'Amuzgo', 'Amuzgo del sur','Guerrero', 'Ometepec'),
-(6, 'Amuzgo', 'Amuzgo bajo del este', 'Oaxaca','Santa María Ipalapa' ),
-(7, 'Amuzgo', 'Amuzgo bajo del este', 'Oaxaca','Santa María Ipalapa' ),
-(8, 'Amuzgo', 'Amuzgo alto del este', 'Oaxaca','San Pedro Amuzgos' ),
-(9, 'Amuzgo', 'Amuzgo alto del este', 'Oaxaca','San Pedro Amuzgos' ),
-(10, 'Amuzgo', 'Amuzgo alto del este', 'Oaxaca','San Pedro Amuzgos' ),
-(11, 'Awakateko', 'Awakateko', 'Campeche','Champotón' ),
-(12, 'Ayapaneco', 'Ayapaneco', 'Tabasco','Jalpa de Méndez'),
-(13, 'Cora', 'Cora de Rosarito', 'Nayarit','Rosamorada' ),
-(14, 'Cora', 'Cora de Dolores', 'Nayarit','Del Nayar [El Nayar]' ),
-(15, 'Cora', 'Cora meseño', 'Nayarit','Del Nayar [El Nayar]' ),
-(16, 'Cora', 'Cora de Jesús María', 'Nayarit','Del Nayar [El Nayar]' ),
-(17, 'Cora', 'Cora francisqueño', 'Nayarit','Del Nayar [El Nayar]' ),
-(18, 'Cora', 'Cora tereseño', 'Durango','Mezquital' ),
-(18, 'Cora', 'Cora tereseño', 'Nayarit','Acaponeta' ),
-(18, 'Cora', 'Cora tereseño', 'Nayarit','Del Nayar [El Nayar]' ),
-(19, 'Cora', 'Cora presideño', 'Nayarit','Ruiz'),
-(20, 'Cora', 'Cora corapeño','Nayarit', 'Rosamorada'),
-(21, 'Cucapá', 'Cucapá ','Baja California', 'Mexicali'),
-(21, 'Cucapá', 'Cucapá ','Sonora', 'San Luis Colorado'),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Concepción Pápalo' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Francisco Chapulapa' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Juan Bautista Cuicatlán' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Juan Tepeuxila' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Pedro Sochiapam' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Santa María Pápalo' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Santa María Tlalixtac' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Santos Reyes Pápalo' ),
-(22, 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Valerio Trujano' ),
-(23, 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Andrés Teotilalpam' ),
-(23, 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Francisco Chapulapa'),
-(23, 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','Santa María Tlalixtac'),
-(24, 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Andrés Teotilalpam' ),
-(24, 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Francisco Chapulapa'),
-(24, 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','Santa María Tlalixtac'),
-(25, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Andrés Teotilalpam' ),
-(25, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Francisco Chapulapa'),
-(25, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Pedro Teutila'),
-(25, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','Santa María Tlalixtac'),
-(26, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Andrés Teotilalpam' ),
-(26, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Francisco Chapulapa'),
-(26, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Pedro Teutila'),
-(26, 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','Santa María Tlalixtac'),
-(27, 'Chatino', 'Chatino occidental alto', 'Oaxaca','San Jacinto Tlacotepec'),
-(27, 'Chatino', 'Chatino occidental alto', 'Oaxaca','Santa Cruz Zenzontepec'),
-(27, 'Chatino', 'Chatino occidental alto', 'Oaxaca','Santiago Ixtayutla' ),
-(28, 'Chatino', 'Chatino occidental bajo', 'Oaxaca','San Pedro Mixtepec Distrito 22'),
-(28, 'Chatino', 'Chatino occidental bajo', 'Oaxaca','Tataltepec de Valdés'),
-(28, 'Chatino', 'Chatino occidental bajo', 'Oaxaca','Villa de Tututepec de Melchor Ocampo'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','San Juan Quiahije'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','San Miguel Panixtlahuaca'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','San Pedro Juchatengo'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','Santa Catarina Juquila'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','Santiago Tetepec'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','Santiago Yaitepec'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','Tataltepec de Valdés'),
-(29, 'Chatino', 'Chatino central', 'Oaxaca','Villa Sola de Vega'),
-(30, 'Chatino', 'Chatino oriental bajo', 'Oaxaca','San Gabriel Mixtepec'),
-(30, 'Chatino', 'Chatino oriental bajo', 'Oaxaca','Santa María Temaxcaltepec' ),
-(30, 'Chatino', 'Chatino oriental bajo', 'Oaxaca','Santos Reyes Nopala'),
-(31, 'Chatino', 'Chatino oriental alto', 'Oaxaca','San Gabriel Mixtepec'),
-(31, 'Chatino', 'Chatino oriental alto', 'Oaxaca','San Juan Lachao'),
-(32, 'Chatino', 'Chatino de zacatepec', 'Oaxaca','Santa Catarina Juquila'),
-(33, 'Chichimeco jonaz', 'Chichimeco jonaz', 'Guanajuato','San Luis de la Paz'),
-(34, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Jalapa de Díaz'),
-(34, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Usila'),
-(34, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San José Chiltepec'),
-(34, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Juan Cotzocón'),
-(34, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Lucas Ojitlán'),
-(34, 'Chinanteco','Chinanteco del norte', 'Oaxaca',' San Juan Bautista Tuxtepec'),
-(34, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Cosamaloapan'),
-(34, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Isla'),
-(34, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Juan Rodríguez Clara'),
-(34, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tierra Blanca'),
-(34, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tres Valles'),
-(34, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Uxpanapa'),
-(35, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Jalapa de Díaz'),
-(35, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Usila'),
-(35, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San José Chiltepec'),
-(35, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Juan Cotzocón'),
-(35, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Lucas Ojitlán'),
-(35, 'Chinanteco','Chinanteco del norte', 'Oaxaca',' San Juan Bautista Tuxtepec'),
-(35, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Cosamaloapan'),
-(35, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Isla'),
-(35, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Juan Rodríguez Clara'),
-(35, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tierra Blanca'),
-(35, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tres Valles'),
-(35, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Uxpanapa'),
-(36, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Jalapa de Díaz'),
-(36, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Usila'),
-(36, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San José Chiltepec'),
-(36, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Juan Cotzocón'),
-(36, 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Lucas Ojitlán'),
-(36, 'Chinanteco','Chinanteco del norte', 'Oaxaca',' San Juan Bautista Tuxtepec'),
-(36, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Cosamaloapan'),
-(36, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Isla'),
-(36, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Juan Rodríguez Clara'),
-(36, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tierra Blanca'),
-(36, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tres Valles'),
-(36, 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Uxpanapa'),
-(37, 'Chinanteco','Chinanteco central bajo', 'Oaxaca','San Juan Bautista Valle Nacional'),
-(38, 'Chinanteco','Chinanteco central bajo', 'Oaxaca','San Juan Bautista Valle Nacional'),
-(39, 'Chinanteco','Chinanteco central bajo', 'Oaxaca','San Juan Bautista Valle Nacional'),
-(40, 'Chinanteco','Chinanteco del sureste alto', 'Oaxaca','Ayotzintepec'),
-(41, 'Chinanteco','Chinanteco del sureste bajo', 'Oaxaca','San Juan Lalana' ),
-(42, 'Chinanteco','Chinanteco del sureste bajo', 'Oaxaca','San Juan Lalana' ),
-(43, 'Chinanteco', 'Chinanteco del oeste central alto', 'Oaxaca','San Felipe Usila'),
-(44, 'Chinanteco', 'Chinanteco del oeste central alto', 'Oaxaca','San Felipe Usila'),
-(45, 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Juan Bautista Atatlahuca'),
-(45, 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Juan Bautista Valle Nacional'),
-(45, 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Juan Quiotepec'),
-(45, 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Pedro Yolox'),
-(45, 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','Santiago Comaltepec'),
-(46, 'Chinanteco', 'Chinanteco del norte', 'Oaxaca','San Andrés Teotilalpam'),
-(46, 'Chinanteco', 'Chinanteco del norte', 'Oaxaca','San Juan Bautista Tlacoatzintepec'),
-(47, 'Chinanteco', 'Chinanteco del oeste central alto', 'Oaxaca','San Pedro Sochiapám'),
-(48, 'Chinanteco', 'Chinanteco del oeste centra bajo', 'Oaxaca','San Felipe Usila'),
-(49, 'Chinanteco', 'Chinanteco del oeste centra bajo', 'Oaxaca','San Felipe Usila'),
-(50, 'Chinanteco', 'Chinanteco del oeste centra bajo', 'Oaxaca','San Felipe Usila'),
-(51, 'Chinanteco', 'Chinanteco del sureste medio', 'Oaxaca','San Juan Petlapa'),
-(51, 'Chinanteco', 'Chinanteco del sureste medio', 'Oaxaca','Santiago Choapam'),
-(51, 'Chinanteco', 'Chinanteco del sureste medio', 'Oaxaca','Santiago Jocotepec'),
-(51, 'Chinanteco', 'Chinanteco del sureste medio', 'Veracruz de Ignacio de la Llave',' Playa Vicente'),
-(52, 'Chinanteco', 'Chinanteco central', 'Oaxaca','Ayotzintepec'),
-(52, 'Chinanteco', 'Chinanteco central', 'Oaxaca','San Felipe Usila'),
-(52, 'Chinanteco', 'Chinanteco central','Oaxaca',' San José Chiltepec'),
-(52, 'Chinanteco', 'Chinanteco central','Oaxaca','San Juan Bautista Valle Nacional'),
-(52, 'Chinanteco', 'Chinanteco central','Oaxaca',' Santa María Jacatepec'),
-(52, 'Chinanteco', 'Chinanteco central','Oaxaca',' Santiago Jocotepec'),
-(53, 'Chinanteco', 'Chinanteco central', 'Oaxaca','Ayotzintepec'),
-(53, 'Chinanteco', 'Chinanteco central', 'Oaxaca','San Felipe Usila'),
-(53, 'Chinanteco', 'Chinanteco central','Oaxaca',' San José Chiltepec'),
-(53, 'Chinanteco', 'Chinanteco central','Oaxaca','San Juan Bautista Valle Nacional'),
-(53, 'Chinanteco', 'Chinanteco central','Oaxaca',' Santa María Jacatepec'),
-(53, 'Chinanteco', 'Chinanteco central','Oaxaca',' Santiago Jocotepec'),
-(54, 'Chocholteco', 'Chocholteco del oeste','Oaxaca','Ocotlán'),
-(54, 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'San Francisco Teopan'),
-(54, 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'Tequixtepec'),
-(54, 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'San Miguel Tulancingo'),
-(54, 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'San Pedro Nopala'),
-(54, 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'Santa Magdalena Jicotlán'),
-(54, 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'Teotongo'),
-(55,'Chocholteco','Chocholteco del sur','Oaxaca', 'San Miguel Huautla'),
-(55,'Chocholteco','Chocholteco del sur','Oaxaca', 'Santa María nativitas'),
-(56, 'Chocholteco', 'Chocholteco del este','Oaxaca','San Juan Bautista Coixtlahuaca'),
-(56, 'Chocholteco', 'Chocholteco del este','Oaxaca','San Miguel Chicahua'),
-(57, 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Asunción Tlacolulita'),
-(57, 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Magdalena Tequisistlán'),
-(57, 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','San Carlos Yautepec'),
-(57, 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','San Miguel Tenango'),
-(57, 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Santa María Quiegolani'),
-(57, 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Santo Domingo Tehuantepec'),
-(58, 'chontal de Oaxaca','chontal de Oaxaca bajo','Oaxaca','Santa María Ecatepec'),
-(59, 'chontal de Oaxaca','chontal de Oaxaca de la costa','Oaxaca','San Pedro Huamelula'),
-(59, 'chontal de Oaxaca','chontal de Oaxaca de la costa','Oaxaca','Santiago Astata'),
-(59, 'chontal de Oaxaca','chontal de Oaxaca de la costa','Oaxaca','Santo Domingo Tehuantepec'),
-(60, 'chontal de Tabasco','chontal de Tabasco central','Tabasco','Jalpa de Méndez'),
-(60, 'chontal de Tabasco','chontal de Tabasco central','Tabasco','Nacajuca'),
-(61, 'chontal de Tabasco','chontal de Tabasco del este','Tabasco','Centro'),
-(62, 'chontal de Tabasco','chontal de Tabasco del sureste', 'Tabasco','Macuspana'),
-(63, 'chontal de Tabasco','chontal de Tabasco del norte', 'Tabasco','Centla'),
-(64, 'Chuj','Chuj', 'Campeche','Campeche'),
-(64, 'Chuj','Chuj', 'Campeche','Champotón'),
-(64, 'Chuj','Chuj', 'Campeche','La Independencia'),
-(64, 'Chuj','Chuj', 'Campeche','La Trinitaria'),
-(64, 'Chuj','Chuj', 'Campeche','Las Margaritas'),
-(64, 'Chuj','Chuj', 'Campeche','Maravilla Tenejapa'),
-(64, 'Chuj','Chuj', 'Campeche','Othón P.Blanco'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Amatán'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Huitiupán'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Las Margaritas'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Maravilla Tenejapa'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Oxchuc'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Palenque'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','sabanilla'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Salto de agua'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Tila'),
-(65,'ch’ol','ch’ol del noroeste','Chiapas','Yajalón'),
-(65,'ch’ol','ch’ol del noroeste','Tabasco','Macuspana'),
-(65,'ch’ol','ch’ol del noroeste','Tabasco','Tacotalpa'),
-(66,'ch’ol','ch’ol del sureste','Campeche','Calakmul'),
-(66,'ch’ol','ch’ol del sureste','Chiapas','Benemérito de las Américas'),
-(66,'ch’ol','ch’ol del sureste','Chiapas','Catazajá'),
-(66,'ch’ol','ch’ol del sureste','Chiapas','Marqués de comillas'),
-(66,'ch’ol','ch’ol del sureste','Chiapas','Ocosingo'),
-(66,'ch’ol','ch’ol del sureste','Chiapas','Tumbalá'),
-(66,'ch’ol','ch’ol del sureste','Tabasco','Balancán'),
-(67,'Guarijío','guarijío del norte','Chihuahua','Chínipas'),
-(67,'Guarijío','guarijío del norte','Chihuahua','Moris'),
-(67,'Guarijío','guarijío del norte','Chihuahua','Uruachi'),
-(68,'Guarijío','guarijío del sur','Sonora','Álamos'),
-(68,'Guarijío','guarijío del sur','Sonora','Quiriego'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Aquismón'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Ciudad Valles'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Coxcatlán'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Huehuetlán'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','San Antonio'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','San Vicente Tancuayalab'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tamuín'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tancanhuitz de Santos'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanlajás'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanquián de Escobedo'),
-(69,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Xilitla'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Aquismón'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Ciudad Valles'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Coxcatlán'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Huehuetlán'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','San Antonio'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','San Vicente Tancuayalab'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tamuín'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tancanhuitz de Santos'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanlajás'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanquián de Escobedo'),
-(70,'Huasteco','Huasteco del occidente', 'San Luis Potosi','Xilitla'),
-(71,'Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Platón Sánchez'),
-(71,'Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tantoyuca'),
-(71,'Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tempoal'),
-(72,'Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Platón Sánchez'),
-(72,'Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tantoyuca'),
-(72,'Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tempoal'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Cerro Azul'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chicontepec'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chinampa de Gorostiza'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chontla'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Citlaltépetl'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Ixcatepec'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Naranjos Amatlán'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tamalín'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tantima'),
-(73,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tepetzintla'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Cerro Azul'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chicontepec'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chinampa de Gorostiza'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chontla'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Citlaltépetl'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Ixcatepec'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Naranjos Amatlán'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tamalín'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tantima'),
-(74,'Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tepetzintla'),
-(75,'Huave','Huave del oeste','Oaxaca','Juchitán de Zaragoza'),
-(75,'Huave','Huave del oeste','Oaxaca','San Mateo del Mar'),
-(76,'Huave','Huave del este','Oaxaca','San Dionisio del Mar'),
-(76,'Huave','Huave del este','Oaxaca','San Francisco del Mar'),
-(77,'Huichol','Huichol del norte','Nayarit','Del Nayar[El Nayar]'),
-(77,'Huichol','Huichol del norte','Nayarit','La yesca'),
-(77,'Huichol','Huichol del norte','Nayarit','Rosamorada'),
-(77,'Huichol','Huichol del norte','Nayarit','San Blas'),
-(77,'Huichol','Huichol del norte','Nayarit','Santiago'),
-(77,'Huichol','Huichol del norte','Nayarit','Ixcuintla'),
-(77,'Huichol','Huichol del norte','Nayarit','Mezquital'),
-(78,'Huichol','Huichol del sur','Jalisco','Bolaños'),
-(78,'Huichol','Huichol del sur','Jalisco','San Martín de Bolaños'),
-(78,'Huichol','Huichol del sur','Jalisco','Villa Guerrero'),
-(79,'Huichol','Huichol del este','Jalisco','Mezquitic'),
-(80,'Huichol','Huichol del oeste','Jalisco','Huejuquilla el Alto'),
-(81,'Ixcateco','ixcateco','Oaxaca','Santa María Ixcatlán'),
-(82,'Ixil','Ixil Chajuleño','Campeche','Campeche'),
-(82,'Ixil','Ixil Chajuleño','Quintana Roo','Othón P.Blanco'),
-(83,'Ixil','Ixil nebajeño','Quintana Roo','Othón P.Blanco'),
-(84,'Jakalteko','Jakalteko','Campeche','Campeche'),
-(84,'Jakalteko','Jakalteko','Campeche','Champotón'),
-(84,'Jakalteko','Jakalteko','Chiapas','Amatenango de la Frontera'),
-(84,'Jakalteko','Jakalteko','Chiapas','Bella Vista'),
-(84,'Jakalteko','Jakalteko','Chiapas','Frontera Comalapa'),
-(84,'Jakalteko','Jakalteko','Chiapas','la Trinitaria'),
-(84,'Jakalteko','Jakalteko','Quintana Roo','Othón P.Blanco'),
-(85,'Kaqchikel','Kaqchikel','Campeche','Campeche'),
-(85,'Kaqchikel','Kaqchikel','Campeche','Champotón'),
-(85,'Kaqchikel','Kaqchikel','Quintana Roo','Othón P.Blanco'),
-(86,'Kickapoo','Kickapoo','Coahuila de Zaragoza','Múzquiz'),
-(87,'Kiliwa','Kiliwa','Baja California','Ensenada'),
-(88,'Kumiai','Kumiai','Baja California','Ensenada'),
-(88,'Kumiai','Kumiai','Baja California','Playas del Rosarito'),
-(88,'Kumiai','Kumiai','Baja California','Tecate'),
-(89,'Ku’ahl','Ku’ahl','Baja California','Ensenada'),
-(90,'K’iche’','K’iche’(oriental)','Campeche','Campeche'),
-(90,'K’iche’','K’iche’(oriental)','Campeche','Champotón'),
-(90,'K’iche’','K’iche’(oriental)','Chiapas','Las Margaritas'),
-(90,'K’iche’','K’iche’(oriental)','Chiapas','Marqués de comillas'),
-(90,'K’iche’','K’iche’(oriental)','Quintana Roo','Othón P.Blanco'),
-(91,'K’iche’','K’iche’(occidental)','Campeche','Champotón'),
-(92,'K’iche’','K’iche’(central)','Campeche','Champotón'),
-(93,'Lacandón','Lacandón','Chiapas','Ocosingo'),
-(94,'Mam','Mam de la frontera','Chiapas','Amatenango de la Frontera'),
-(94,'Mam','Mam de la frontera','Chiapas','Bejucal de Ocampo'),
-(94,'Mam','Mam de la frontera','Chiapas','Comalapa'),
-(94,'Mam','Mam de la frontera','Chiapas','La Independencia'),
-(94,'Mam','Mam de la frontera','Chiapas','La Trinitaria'),
-(94,'Mam','Mam de la frontera','Chiapas','Las Margaritas'),
-(94,'Mam','Mam de la frontera','Chiapas','Maravilla Tenejapa'),
-(95,'Mam','Mam del norte','Campeche','Campeche'),
-(95,'Mam','Mam del norte','Campeche','Champotón'),
-(95,'Mam','Mam del norte','Quintana Roo','Othón P.Blanco'),
-(96,'Mam','Mam del sur','Campeche','Campeche'),
-(96,'Mam','Mam del sur','Campeche','Champotón'),
-(96,'Mam','Mam del sur','Quintana Roo','Othón P.Blanco'),
-(97,'Mam','Mam de la sierra','Chiapas','Bella Vista'),
-(97,'Mam','Mam de la sierra','Chiapas','El Porvenir'),
-(97,'Mam','Mam de la sierra','Chiapas','La Grandeza'),
-(97,'Mam','Mam de la sierra','Chiapas','Mazapa de Madero'),
-(97,'Mam','Mam de la sierra','Chiapas','Motozintla'),
-(97,'Mam','Mam de la sierra','Chiapas','Siltepec'),
-(98,'Mam','Mam del Soconusco','Chiapas','Cacahoatán'),
-(98,'Mam','Mam del Soconusco','Chiapas','Huehuetán'),
-(98,'Mam','Mam del Soconusco','Chiapas','Huixtla'),
-(98,'Mam','Mam del Soconusco','Chiapas','Tapachula'),
-(98,'Mam','Mam del Soconusco','Chiapas','Tuxtla Chico'),
-(98,'Mam','Mam del Soconusco','Chiapas','tuzantlán'),
-(98,'Mam','Mam del Soconusco','Chiapas','unión Juárez'),
-(99,'Mam','Mam del Soconusco','Chiapas','Cacahoatán'),
-(99,'Mam','Mam del Soconusco','Chiapas','Huehuetán'),
-(99,'Mam','Mam del Soconusco','Chiapas','Huixtla'),
-(99,'Mam','Mam del Soconusco','Chiapas','Tapachula'),
-(99,'Mam','Mam del Soconusco','Chiapas','Tuxtla Chico'),
-(99,'Mam','Mam del Soconusco','Chiapas','tuzantlán'),
-(99,'Mam','Mam del Soconusco','Chiapas','unión Juárez'),
-(100,'Matlatzinca','Matlatzinca','Estado de México','Temascaltepec'),
-(101,'Maya','maya(Campeche)','Campeche','Calakmul'),
-(101,'Maya','maya(Campeche)','Campeche','Calkiní'),
-(101,'Maya','maya(Campeche)','Campeche','Campeche'),
-(101,'Maya','maya(Campeche)','Campeche','Candelaria'),
-(101,'Maya','maya(Campeche)','Campeche','Champotón'),
-(101,'Maya','maya(Campeche)','Campeche','Escárcega'),
-(101,'Maya','maya(Campeche)','Campeche','Hecelchakán'),
-(101,'Maya','maya(Campeche)','Campeche','Hopelchén'),
-(101,'Maya','maya(Campeche)','Campeche','Tenabo'),
-(101,'Maya','maya(Campeche)','Quintana Roo','Benito Juárez'),
-(101,'Maya','maya(Campeche)','Quintana Roo','Felipe Carrillo Puerto'),
-(101,'Maya','maya(Campeche)','Quintana Roo','José María Morelos'),
-(101,'Maya','maya(Campeche)','Quintana Roo','Lázaro Cárdenas'),
-(101,'Maya','maya(Campeche)','Quintana Roo','Othón P.Blanco'),
-(101,'Maya','maya(Campeche)','Quintana Roo','Solidaridad'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Río Lagartos'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Sacalum'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Samahil'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','San Felipe'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Santa Elena'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Seyé'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Sinanché'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Sotuta'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Sudzal'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Suma'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tahdziú'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tahmek'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Teabo'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Teckal de venegas'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tekantó'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tekax'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tekit'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tekom'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Telchac Pueblo'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Temax'), 
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Temozón'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tepakán'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tetiz'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Teya'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Ticul'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Timucuy'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tinum'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tixcacalcupul'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tixkokob'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tixméhuac'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo' 'Tixpehual'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tizimín'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tunkás'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Tzucacab'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Uayma'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Yaxkukul'),
-(102,'Maya','maya(Quintana Roo)','Quintana Roo','Yobaín'),
-(103,'Maya','maya(Yucatán)','Yucatán','Abalá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Acanceh'),
-(103,'Maya','maya(Yucatán)','Yucatán','Akil Baca'),
-(103,'Maya','maya(Yucatán)','Yucatán','Bokobá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Buctzotz'),
-(103,'Maya','maya(Yucatán)','Yucatán','Cacalchén'),
-(103,'Maya','maya(Yucatán)','Yucatán','Calotmul'),
-(103,'Maya','maya(Yucatán)','Yucatán','Cansahcab'),
-(103,'Maya','maya(Yucatán)','Yucatán','Cantamayec'),
-(103,'Maya','maya(Yucatán)','Yucatán','Celestún'),
-(103,'Maya','maya(Yucatán)','Yucatán','Cenotillo'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chacsinkín'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chankom'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chapab'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chemax'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chichimilá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chicxulub Pueblo'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chikindzonot'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chocholá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Chumayel'),
-(103,'Maya','maya(Yucatán)','Yucatán','Conkal'),
-(103,'Maya','maya(Yucatán)','Yucatán','Cuncunul'),
-(103,'Maya','maya(Yucatán)','Yucatán','Cuzamá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Dzan'),
-(103,'Maya','maya(Yucatán)','Yucatán','Dzemul'),
-(103,'Maya','maya(Yucatán)','Yucatán','Dzidzantú'),
-(103,'Maya','maya(Yucatán)','Yucatán','Dzilam de Bravo'),
-(103,'Maya','maya(Yucatán)','Yucatán','Dzitás'),
-(103,'Maya','maya(Yucatán)','Yucatán','Dzoncauich'),
-(103,'Maya','maya(Yucatán)','Yucatán','Espita'),
-(103,'Maya','maya(Yucatán)','Yucatán','Halachó'),
-(103,'Maya','maya(Yucatán)','Yucatán','Hocabá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Hoctún'),
-(103,'Maya','maya(Yucatán)','Yucatán','Homún'),
-(103,'Maya','maya(Yucatán)','Yucatán','Hunucma'),
-(103,'Maya','maya(Yucatán)','Yucatán','Huhí'),
-(103,'Maya','maya(Yucatán)','Yucatán','Ixil'),
-(103,'Maya','maya(Yucatán)','Yucatán','Izamal'),
-(103,'Maya','maya(Yucatán)','Yucatán','Kanasín'),
-(103,'Maya','maya(Yucatán)','Yucatán','Kantunil'),
-(103,'Maya','maya(Yucatán)','Yucatán','Kaua'),
-(103,'Maya','maya(Yucatán)','Yucatán','Kinchil'),
-(103,'Maya','maya(Yucatán)','Yucatán','Maní'),
-(103,'Maya','maya(Yucatán)','Yucatán','Mama'),
-(103,'Maya','maya(Yucatán)','Yucatán','Maxcanú'),
-(103,'Maya','maya(Yucatán)','Yucatán','Mayapán'),
-(103,'Maya','maya(Yucatán)','Yucatán','Mérida'),
-(103,'Maya','maya(Yucatán)','Yucatán','Mocochá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Motul'),
-(103,'Maya','maya(Yucatán)','Yucatán','Muna'),
-(103,'Maya','maya(Yucatán)','Yucatán','Muxupip'),
-(103,'Maya','maya(Yucatán)','Yucatán','Opichén'),
-(103,'Maya','maya(Yucatán)','Yucatán','Oxkutzcab'),
-(103,'Maya','maya(Yucatán)','Yucatán','Panabá'),
-(103,'Maya','maya(Yucatán)','Yucatán','Peto'),
-(103,'Maya','maya(Yucatán)','Yucatán','Progreso'),
-(104,'Mayo','mayo','Sonora','Álamos'),
-(104,'Mayo','mayo','Sonora','Benito Juárez'),
-(104,'Mayo','mayo','Sonora','Cajeme'),
-(104,'Mayo','mayo','Sonora','Etchojoa'),
-(104,'Mayo','mayo','Sonora','Huatabampo'),
-(104,'Mayo','mayo','Sonora','Navojoa'),
-(104,'Mayo','mayo','Sonora','San Ignacio Río Muerto'),
-(104,'Mayo','mayo','Sinaloa','Ahome'),
-(104,'Mayo','mayo','Sinaloa','Angostura'),
-(104,'Mayo','mayo','Sinaloa','Choix'),
-(104,'Mayo','mayo','Sinaloa','El Fuerte'),
-(104,'Mayo','mayo','Sinaloa','Guasave'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Almoloya de Juárez'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Atlacomulco'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Donato Guerra'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','El oro'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Ixtapan del Oro'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Ixtlahuaca'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Jiquipilco'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Jocotitlán'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Morelos'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','San Felipe del Progreso'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Valle de Bravo'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Villa de Allende'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Villa Victoria'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Michoacan de Ocampo'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Angangueo'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Ocampo'),
-(105,'Mazahua','Mazahua de oriente','Estado de México','Susupuato'),
-(106,'Mazahua','Mazahua de occidente','Estado de México','Atlacomulco'),
-(106,'Mazahua','Mazahua de occidente','Estado de México','Temascalcingo'),
-(106,'Mazahua','Mazahua de occidente','Estado de México','Villa de Victoria'),
-(106,'Mazahua','Mazahua de occidente','Estado de México','Michoacán de Ocampo'),
-(106,'Mazahua','Mazahua de occidente','Estado de México','Zitácuaro'),
-(107,'Mazateco','Mazateco del noroeste','Oaxaca','Acatlán de Pérez Figueroa'),
-(107,'Mazateco','Mazateco del noroeste','Oaxaca','San Miguel Soyaltepec'),
-(108,'Mazateco','Mazateco de la presa bajo','Oaxaca','San Pedro Ixcatlán'),
-(109,'Mazateco','Mazateco del este bajo','Oaxaca','San Felipe Jalapa de Díaz'),
-(109,'Mazateco','Mazateco del este bajo','Oaxaca','San Pedro Teutila'),
-(110,'Mazateco','Mazateco del sureste','Oaxaca','Chiquihuitlán de Benito Juárez'),
-(110,'Mazateco','Mazateco del sureste','Oaxaca','San Bartolomé Ayautla'),
-(111,'Mazateco','Mazateco del sureste','Oaxaca','Chiquihuitlán de Benito Juárez'),
-(111,'Mazateco','Mazateco del sureste','Oaxaca','San Bartolomé Ayautla'),
-(112,'Mazateco','Mazateco de Eloxochitlán','Oaxaca','Eloxochitlán de Flores Magón'),
-(113,'Mazateco','Mazateco del centro','Oaxaca','Huatepec'),
-(113,'Mazateco','Mazateco del centro','Oaxaca','Huatla de Jiménez'),
-(113,'Mazateco','Mazateco del centro','Oaxaca','Santa María la Asunción'),
-(114,'Mazateco','Mazateco del suroeste','Oaxaca','Mazatlán Villa de Flores'),
-(114,'Mazateco','Mazateco del suroeste','Oaxaca','San Juan de los Cues'),
-(114,'Mazateco','Mazateco del suroeste','Oaxaca','Santa María Tecomavaca'),
-(115,'Mazateco','Mazateco de Huehuetlán','Oaxaca','San Francisco Huehuetlán'),
-(116,'Mazateco','Mazateco de Tecóatl','Oaxaca','San Jerónimo Tecóatl'),
-(117,'Mazateco','Mazateco de la presa alto','Oaxaca','San José Independencia'),
-(117,'Mazateco','Mazateco de la presa alto','Oaxaca','San José Tenango'),
-(118,'Mazateco','Mazateco del oeste','Oaxaca','San Lucas Zoquiapam'),
-(118,'Mazateco','Mazateco del oeste','Oaxaca','San Martín Toxpalan'),
-(119,'Mazateco','Mazateco del norte','Oaxaca','San Mateo Yoloxochitlán'),
-(119,'Mazateco','Mazateco del norte','Oaxaca','Santa María Chilchotla'),
-(119,'Mazateco','Mazateco del norte','Veracruz','Tezonapa'),
-(120,'Mazateco','Mazateco del norte','Oaxaca','San Mateo Yoloxochitlán'),
-(120,'Mazateco','Mazateco del norte','Oaxaca','Santa María Chilchotla'),
-(120,'Mazateco','Mazateco del norte','Veracruz','Tezonapa'),
-(121,'Mazateco','Mazateco de Ocopetatillo','Oaxaca','San Pedro Ocopetatillo'),
-(122,'Mazateco','Mazateco de Acatepec','Oaxaca','Santa Cruz Acatepec'),
-(123,'Mazateco','Mazateco de Puebla','Puebla','San Lorenzo cuaunecuiltitla'),
-(123,'Mazateco','Mazateco de Puebla','Puebla','Santa Ana Ateixtlahuaca'),
-(124,'Mixe','mixe alto del norte','Oaxaca','Santa María Tlahuitoltepec'),
-(124,'Mixe','mixe alto del norte','Oaxaca','Santo de Roayaga'),
-(124,'Mixe','mixe alto del norte','Oaxaca','Totontepec Villa de Morelos'),
-(125,'Mixe','mixe alto del centro','Oaxaca','San Pedro y San Pablo Ayutla'),
-(125,'Mixe','mixe alto del centro','Oaxaca','Santa María Tlahuitoltepec'),
-(125,'Mixe','mixe alto del centro','Oaxaca','Tamazulapam del Espíritu Santo'),
-(126,'Mixe','mixe alto del sur','Oaxaca','Mixistlán de la Reforma'),
-(126,'Mixe','mixe alto del sur','Oaxaca','Santa María Tepantlali'),
-(126,'Mixe','mixe alto del sur','Oaxaca','Santo Domingo Tepuxtepec'),
-(127,'Mixe','mixe medio del este','Oaxaca','San Juan Cotzocón'),
-(127,'Mixe','mixe medio del este','Oaxaca','San Juan Juquila Mixes'),
-(127,'Mixe','mixe medio del este','Oaxaca','San Miguel Quetzaltepec'),
-(127,'Mixe','mixe medio del este','Oaxaca','San Pedro Ocotepec'),
-(127,'Mixe','mixe medio del este','Oaxaca','Santa María Alotepec'),
-(127,'Mixe','mixe medio del este','Oaxaca','Santiago Atitlán'),
-(128,'Mixe','mixe medio del oeste','Oaxaca','Asunción Cacalotepec'),
-(129,'Mixe','mixe bajo','Oaxaca','Camotlán'),
-(129,'Mixe','mixe bajo','Oaxaca','Camotlán'),
-(129,'Mixe','mixe bajo','Oaxaca','Matías Romero'),
-(129,'Mixe','mixe bajo','Oaxaca','Mazatlán'),
-(129,'Mixe','mixe bajo','Oaxaca','San Juan Guichicovi'),
-(129,'Mixe','mixe bajo','Oaxaca','Santo Domingo Petapa'),
-(129,'Mixe','mixe bajo','Oaxaca','Santo Domingo Tehuantepec'),
-(130,'Mixteco','mixteco de Guerrero del noroeste central','Guerrero','Alcozáuca de Guerrero'),
-(131,'Mixteco','mixteco de Atlamajalcingo','Guerrero','Atlamajalcingo del Monte'),
-(132,'Mixteco','mixteco de Chochoapa','Guerrero','Metlatónoc'),
-(133,'Mixteco','mixteco de Coapanatoyac','Guerrero','Copanatoyac'),
-(134,'Mixteco','mixteco de Coapanatoyac','Guerrero','Copanatoyac'),
-(135,'Mixteco','mixteco de Igualapa','Guerrero','Igualapa'),
-(136,'Mixteco','mixteco de Igualapa','Guerrero','Igualapa'),
-(137,'Mixteco','mixteco central de Guerrero','Guerrero','Malinaltepec'),
-(138,'Mixteco','mixteco central de Guerrero','Guerrero','Malinaltepec'),
-(139,'Mixteco','mixteco de Guerrero del este medio','Guerrero','Metlatónoc'),
-(140,'Mixteco','mixteco de Guerrero del este medio','Guerrero','Metlatónoc'),
-(141,'Mixteco','mixteco de Guerrero del este medio','Guerrero','Metlatónoc'),
-(142,'Mixteco','mixteco de Tlacoachistlahuaca','Guerrero','Tlacoachistlahuaca'),
-(143,'Mixteco','mixteco de Tlalixtaquilla de Maldonado','Guerrero','Tlalixtaquilla de Maldonado'),
-(144,'Mixteco','mixteco de Guerrero del norte','Guerrero','Alpoyeca'),
-(144,'Mixteco','mixteco de Guerrero del norte','Guerrero','Tlapa de Comonfort'),
-(145,'Mixteco','mixteco de Guerrero del norte central','Guerrero','Xalpatláhuac'),
-(146,'Mixteco','mixteco de Xochistlahuaca','Guerrero','Xochistlahuaca'),
-(147,'Mixteco','mixteco de Tlahuapa','Guerrero','Alcozáuca de Guerrero'),
-(148,'Mixteco','mixteco de Guerrero central alto','Guerrero','Malinaltepec'),
-(148,'Mixteco','mixteco de Guerrero central alto','Guerrero','Xalpatláhuac'),
-(149,'Mixteco','mixteco de Xochapa','Guerrero','Alcozáuca de Guerrero'),
-(150,'Mixteco','mixteco de Zoyatlán de Juárez','Guerrero','Alcozáuca de Guerrero'),
-(151,'Mixteco','mixteco de Zoyatlán de Juárez','Guerrero','Alcozáuca de Guerrero'),
-(152,'Mixteco','mixteco de Ayutla','Guerrero','Ayutla de los Libres'),
-(153,'Mixteco','mixteco de San Luis Acatlán','Guerrero','San Luis Acatlán'),
-(154,'Mixteco','mixteco de Guerrero de la costa este','Guerrero','Azoyú'),
-(154,'Mixteco','mixteco de Guerrero de la costa este','Guerrero','Cuajinicuilapa'),
-(155,'Mixteco','mixteco de Guerrero de la costa occidental','Guerrero','Juan R.Escudero'),
-(155,'Mixteco','mixteco de Guerrero de la costa occidental','Guerrero','San Marcos'),
-(155,'Mixteco','mixteco de Guerrero de la costa occidental','Guerrero','Tecoanapa'),
-(156,'Mixteco','mixteco de Guerrero de la costa central','Guerrero','Copala'),
-(156,'Mixteco','mixteco de Guerrero de la costa central','Guerrero','Cautepec'),
-(156,'Mixteco','mixteco de Guerrero de la costa central','Guerrero','Florencio Villareal'),
-(157,'Mixteco','mixteco de Villa de Tututepec','Oaxaca','Villa de Tututepec de Melchor Ocampo'),
-(158,'Mixteco','mixteco de Santa María Huazolotitlán','Oaxaca','Santa María Huazolotitlán'),
-(159,'Mixteco','mixteco de Ixtayutla','Oaxaca','Santiago Ixtayutla'),
-(160,'Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','San Agustín Chayuco'),
-(160,'Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','San Andrés Huaxpaltepec'),
-(160,'Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','San Miguel Tlacamama')
-(160,'Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','Santa Catarina Mechoacán'),
-(160,'Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','Santiago Tetepec'),
-(161,'Mixteco','mixteco de Oaxaca de la costa noroeste','Oaxaca','San Juan Colorado'),
-(161,'Mixteco','mixteco de Oaxaca de la costa noroeste','Oaxaca','San Sebastián Ixcapa'),
-(162,'Mixteco','mixteco de Oaxaca de la costa central baja','Oaxaca','San Pedro Atoyac'),
-(162,'Mixteco','mixteco de Oaxaca de la costa central baja','Oaxaca','Santiago Jamiltepec'),
-(163,'Mixteco','mixteco de Sierra sur oeste','Oaxaca','San Juan Cacahuatepec'),
-(163,'Mixteco','mixteco de Sierra sur oeste','Oaxaca','Santa María Zacatepec'),
-(164,'Mixteco','mixteco de Santiago Amoltepec','Oaxaca','Santiago Amoltepec'),
-(165,'Mixteco','mixteco de Santa Cruz Itundujia','Oaxaca','Santa Cruz Itundujia'),
-(166,'Mixteco','mixteco de Yosondúa','Oaxaca','Santiago Yosondúa'),
-(167,'Mixteco','mixteco de Santa Lucía Monteverde','Oaxaca','Santa Lucía Monteverde'),
-(168,'Mixteco','mixteco de sur bajo','Oaxaca','Chalcatongo de Hidalgo'),
-(168,'Mixteco','mixteco del sur bajo','Oaxaca','San Miguel El Grande'),
-(168,'Mixteco','mixteco del sur bajo','Oaxaca','Santa María Yolotepec'),
-(169,'Mixteco','mixteco de Yosonotú','Oaxaca','Santa Catarina Yosonotú'),
-(170,'Mixteco','mixteco del sur medio','Oaxaca','San Esteban Atatlahuca'),
-(170,'Mixteco','mixteco del sur medio','Oaxaca','Santa Cruz Tacahua'),
-(170,'Mixteco','mixteco del sur medio','Oaxaca','Ixcatlán'),
-(171,'Mixteco','mixteco de San Pedro Molinos','Oaxaca','San Pedro Molinos'),
-(172,'Mixteco','mixteco de Santa María Yosoyúa','Oaxaca','Santa María Yosoyúa'),
-(173,'Mixteco','mixteco de San Mateo Peñasco','Oaxaca','San Mateo Peñasco'),
-(174,'Mixteco','mixteco de San Agustín Tlacotepec','Oaxaca','San Agustín Tlacotepec'),
-(175,'Mixteco','mixteco de San Antonio Sinicahua','Oaxaca','San Antonio Sinicahua'),
-(176'Mixteco','mixteco del sureste central','Oaxaca','San Bartolomé Yucuañe'),
-(176'Mixteco','mixteco del sureste central','Oaxaca','Santa Catarina Ticuá'),
-(177,'Mixteco','mixteco central','Oaxaca','Magdalena Peñasco'),
-(177,'Mixteco','mixteco central','Oaxaca','San Miguel Achiutla'),
-(177,'Mixteco','mixteco central','Oaxaca','Santa Catarina Tayata'),
-(178,'Mixteco','mixteco del suroeste central','Oaxaca','Heroica Ciudad de Tlaxiaco'),
-(178,'Mixteco','mixteco del suroeste central','Oaxaca','Santa Cruz Nundaco'),
-(179,'Mixteco','mixteco del suroeste','Oaxaca','Santa María Yucuchiti'),
-(179,'Mixteco','mixteco del suroeste','Oaxaca','Santiago Nuyoó'),
-(180,'Mixteco','mixteco de ñumi','Oaxaca','San Juan Numi'),
-(181,'Mixteco','mixteco de ñumi','Oaxaca','San Juan Numi'),
-(182,'Mixteco','mixteco de oeste central','Oaxaca','San Juan Mixtepec'),
-(182,'Mixteco','mixteco de oeste central','Oaxaca','San Martín Itunyoso'),
-(182,'Mixteco','mixteco de oeste central','Oaxaca','Santiago Nundiche'),
-(183,'Mixteco','mixteco de oeste','Oaxaca','Coicoyán de las Flores'),
-(183,'Mixteco','mixteco de oeste','Oaxaca','San Martín Peras'),
-(183,'Mixteco','mixteco de oeste','Oaxaca','San Sebastián Tecomaxtlahuaca'),
-(184,'Mixteco','mixteco del norte bajo','Oaxaca','San Antonino Monte Verde'),
-(184,'Mixteco','mixteco del norte bajo','Oaxaca','San Pedro y San pablo Teposcolula'),
-(184,'Mixteco','mixteco del norte bajo','Oaxaca','San Sebastián Nicananduta'),
-(184,'Mixteco','mixteco del norte bajo','Oaxaca','Santiago Yolomecatl'),
-(184,'Mixteco','mixteco del norte bajo','Oaxaca','Villa de Chilapa de Díaz'),
-(184,'Mixteco','mixteco del norte bajo','Oaxaca','Villa de Tamazulápam del Progreso'),
-(185,'Mixteco','mixteco de San Miguel Piedras','Oaxaca','San Miguel Piedras'),
-(186,'Mixteco','mixteco de San Antonio Huitepec','Oaxaca','San Antonio Huitepec'),
-(187,'Mixteco','mixteco de Santa María Peñoles','Oaxaca','Santa María Peñoles'),
-(188,'Mixteco','mixteco bajo de Valles','Oaxaca','Cuilapam de Guerrero'),
-(188,'Mixteco','mixteco bajo de Valles','Oaxaca','San Andrés Ixtlahuaca'),
-(188,'Mixteco','mixteco bajo de Valles','Oaxaca','San Pedro Ixtlahuaca'),
-(188,'Mixteco','mixteco bajo de Valles','Oaxaca','Santa Cruz Xoxocotlán'),
-(188,'Mixteco','mixteco bajo de Valles','Oaxaca','Santa María Atzompa'),
-(188,'Mixteco','mixteco bajo de Valles','Oaxaca','Santiago Tlazoyaltepec'),
-(189,'Mixteco','mixteco alto de Valles','Oaxaca','San Andrés Nuxiño'),
-(189,'Mixteco','mixteco alto de Valles','Oaxaca','San Francisco Telixtlahuaca'),
-(190,'Mixteco','mixteco del este','Oaxaca','Asunción Nochistlán'),
-(190,'Mixteco','mixteco del este','Oaxaca','Santo Domingo Nuxaá'),
-(190,'Mixteco','mixteco del este','Oaxaca','San Pedro Coxcaltepec Cántaros'),
-(191,'Mixteco','mixteco de Santa Inés de Zaragoza','Oaxaca','Santa Inés de Zaragoza'),
-(192,'Mixteco','mixteco del este central','Oaxaca','San Francisco Jaltepetongo'),
-(192,'Mixteco','mixteco del este central','Oaxaca','San Juan Diuxi'),
-(192,'Mixteco','mixteco del este central','Oaxaca','Santiago Tilantongo'),
-(193,'Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'),
-(193,'Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'),
-(193,'Mixteco','mixteco del noroeste medio','Oaxaca','Tezoatlán de Segura y Luna'),
-(194,'Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'),
-(194,'Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'),
-(194,'Mixteco','mixteco del noroeste medio','Oaxaca','Tezoatlán de Segura y Luna'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Calihuala'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','San Agustín Atenango'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','San Francisco Tlalpancingo'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','San Jorge Nuchita'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','San Juan Ihualtepec'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','San Mateo Nejapam'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','San Miguel Ahuehuetitlán'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','San Miguel Tlacotepec'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Santiago Cacaloxtepec'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Santiago Juxtlahuaca'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Santiago Tamazola'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Santiago Yucuyachi'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Santo Reyes Tepejillo'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Santiago del Río'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Silacayoapam'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Tezoatlán de Segura y Luna'),
-(195,'Mixteco','mixteco del oeste alto','Oaxaca','Zapotitlán Palmas'),
-(196,'Mixteco','mixteco de Santo Domingo Tonalá','Oaxaca','Santo Domingo Tonalá'),
-(197,'Mixteco','mixteco del noroeste central alto','Oaxaca','Tezoatlán de Segura y luna')
-(198,'Mixteco','mixteco del noroeste central bajo','Oaxaca','Tezoatlán de Segura y luna'),
-(199,'Mixteco','mixteco de San Juan Tamazola','Oaxaca','San Juan Tamazola'),
-(200,'Mixteco','mixteco del noroeste','Oaxaca','Asunción Nochixtlán'),
-(200,'Mixteco','mixteco del noroeste','Oaxaca','San Juan Bautista Coixtlahuaca'),
-(200,'Mixteco','mixteco del noroeste','Oaxaca','San Miguel Chicahua'),
-(200,'Mixteco','mixteco del noroeste','Oaxaca','San Miguel Huatla'),
-(200,'Mixteco','mixteco del noroeste','Oaxaca','Santa María Apazco'),
-(200,'Mixteco','mixteco del noroeste','Oaxaca','Santiago Apoala'),
-(201,'Mixteco','mixteco de San Pedro Tidaá','Oaxaca','San Pedro Tidaá'),
-(202,'Mixteco','mixteco de Mitlatongo','Oaxaca','Asunción Nochixtlán'),
-(203,'Mixteco','mixteco de Coatzóspam','Oaxaca','San Juan Coatzóspam'),
-(204,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Atempan'),
-(204,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Ayotoxco de Guerrero'),
-(204,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuautempan'),
-(204,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuetzalan del Progreso'),
-(204,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Chignautla'),
-(204,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Huetamalco'),
-(205,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Atempan'),
-(205,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Ayotoxco de Guerrero'),
-(205,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuautempan'),
-(205,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuetzalan del Progreso'),
-(205,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Chignautla'),
-(205,'Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Huetamalco'),
-(206,'Náhuatl','nahuátl del noroeste central','Hidalgo','Acaxochitlán'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla,''Chiconcuautla'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Honey'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Huauchinango'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Jopala'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Juan Galindo'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Naupan'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Pahuatlán'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Xicotepec'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Tlapacoya'),
-(206,'Náhuatl','nahuátl del noroeste central','Puebla','Zihuateutla'),
-(206,'Náhuatl','nahuátl del noroeste central','Hidalgo','Acaxochitlán'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla,''Chiconcuautla'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Honey'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Huauchinango'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Jopala'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Juan Galindo'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Naupan'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Pahuatlán'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Xicotepec'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Tlapacoya'),
-(207,'Náhuatl','nahuátl del noroeste central','Puebla','Zihuateutla'),
-(208,'Náhuatl','nahuátl del noroeste central','Hidalgo','Acaxochitlán'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla,''Chiconcuautla'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Honey'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Huauchinango'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Jopala'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Juan Galindo'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Naupan'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Pahuatlán'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Xicotepec'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Tlapacoya'),
-(208,'Náhuatl','nahuátl del noroeste central','Puebla','Zihuateutla'),
-(209,'Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Cosoleacaque'),
-(209,'Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Mecayapan'),
-(209,'Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Pajapan'),
-(209,'Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Zaragoza'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Benito Juárez'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Castillo de Teayo'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chalma'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chiconamel'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Citlaltépetl'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Huayacocotla'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','llamatlán'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixcatepec'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tamalín'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'),
-(210,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Benito Juárez'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Castillo de Teayo'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chalma'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chiconamel'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Citlaltépetl'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Huayacocotla'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','llamatlán'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixcatepec'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tamalín'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'),
-(211,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Benito Juárez'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Castillo de Teayo'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chalma'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chiconamel'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Citlaltépetl'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Huayacocotla'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','llamatlán'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixcatepec'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tamalín'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'),
-(212,'Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Aquismón'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Axtla de Terrazas'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ciudad Valles'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ébano'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Huehuetlán'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Matlapa'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','San Martín Chalchicuahutla'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamazunchale'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampacán'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampamolón Corona'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamuín'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tancanhuitz de Santos'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tanquián de Escobedo'),
-(213,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Xilitla'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Aquismón'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Axtla de Terrazas'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ciudad Valles'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ébano'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Huehuetlán'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Matlapa'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','San Martín Chalchicuahutla'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamazunchale'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampacán'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampamolón Corona'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamuín'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tancanhuitz de Santos'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tanquián de Escobedo'),
-(214,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Xilitla'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Aquismón'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Axtla de Terrazas'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ciudad Valles'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ébano'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Huehuetlán'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Matlapa'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','San Martín Chalchicuahutla'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamazunchale'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampacán'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampamolón Corona'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamuín'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tancanhuitz de Santos'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tanquián de Escobedo'),
-(215,'Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Xilitla'),
-(216,'Náhuatl','nahuátl de Oaxaca','Oaxaca','San Martín Toxpalan'),
-(216,'Náhuatl','nahuátl de Oaxaca','Oaxaca','San Miguel Amatitlán'),
-(216,'Náhuatl','nahuátl de Oaxaca','Oaxaca','Santa María Teopoxco'),
-(216,'Náhuatl','nahuátl de Oaxaca','Oaxaca','Santiago Texcalcingo'),
-(216,'Náhuatl','nahuátl de Oaxaca','Oaxaca','Teotitlán de Flores Magón'),
-(217,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Altepexi'),
-(217,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Coxcatlán'),
-(217,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San Gabriel Chilac'),
-(217,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San José Mihuatlán'),
-(217,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Zinacatepec'),
-(218,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Altepexi'),
-(218,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Coxcatlán'),
-(218,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San Gabriel Chilac'),
-(218,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San José Mihuatlán'),
-(218,'Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Zinacatepec'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Ajalpan'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Astacinga'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coxcatlán'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coyomeapan'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Nicolás Bravo'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','San Sebastián Tlacotepec'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Santiago Mihuatlán'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuacán'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuipango'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tlacotepec de Benito Juárez'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Vicente Guerrero'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Zoquitlán'),
-(219,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Ajalpan'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Astacinga'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coxcatlán'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coyomeapan'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Nicolás Bravo'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','San Sebastián Tlacotepec'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Santiago Mihuatlán'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuacán'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuipango'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tlacotepec de Benito Juárez'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Vicente Guerrero'),
-(220,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Zoquitlán'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Ajalpan'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Astacinga'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coxcatlán'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coyomeapan'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Nicolás Bravo'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','San Sebastián Tlacotepec'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Santiago Mihuatlán'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuacán'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuipango'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tlacotepec de Benito Juárez'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Vicente Guerrero'),
-(221,'Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Zoquitlán'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Acultzingo'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Camerino Z.Mendoza'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Coetzala'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixhuatlancillo'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixtaczoquitlán'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Los Reyes'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Magdalena'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Mixtla de Altamirano'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Nogales'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Omealca'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Rafael Delgado'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','San Andrés Tenejapan'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Soledad Atzompa'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tequila'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Texhuacán'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tezonapa'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','tlilapan'),
-(222,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Xoxocotla'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Acultzingo'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Camerino Z.Mendoza'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Coetzala'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixhuatlancillo'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixtaczoquitlán'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Los Reyes'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Magdalena'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Mixtla de Altamirano'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Nogales'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Omealca'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Rafael Delgado'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','San Andrés Tenejapan'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Soledad Atzompa'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tequila'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Texhuacán'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tezonapa'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','tlilapan'),
-(223,'Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Xoxocotla'),
-(224,'Náhuatl','nahuátl de la Sierra oeste de Puebla ','Puebla','Ahuacatlán'),
-(224,'Náhuatl','nahuátl de la Sierra oeste de Puebla ','Puebla','Chignahuapan'),
-(224,'Náhuatl','nahuátl de la Sierra oeste de Puebla ','Puebla','Zacatlán'),
-(225,'Náhuatl','nahuátl alto de norte de Puebla','Puebla','Francisco Z.Mena'),
-(225,'Náhuatl','nahuátl alto de norte de Puebla','Puebla','Venustiano Carranza'),
-(226,'Náhuatl','nahuátl alto de norte de Puebla','Puebla','Francisco Z.Mena'),
-(226,'Náhuatl','nahuátl alto de norte de Puebla','Puebla','Venustiano Carranza'),
-(227,'Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Soteapan'),
-(227,'Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'),
-(228,'Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Soteapan'),
-(228,'Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Acajete'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Acteopan'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Atoyatempan'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Calpan'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Cohuecán'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Huaquechula'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Huatlatlahuca'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Huejotzingo'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Nealticán'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Ocoyucan'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Puebla'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','San Andrés Cholula'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Teopantlán'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Hidalgo'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Tepeojuma'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Tianguismanalco'),
-(229,'Náhuatl','nahuátl del centro de Puebla','Puebla','Tlapanalá')
-(230,'Náhuatl','mexicano bajo de occidente','Colima','Armería'),
-(230,'Náhuatl','mexicano bajo de occidente','Colima','Cuautémoc'),
-(230,'Náhuatl','mexicano bajo de occidente','Colima','Ixtlahuacán'),
-(230,'Náhuatl','mexicano bajo de occidente','Colima','Manzanillo'),
-(231,'Náhuatl','Mexicano de noroeste','Durango','Mezquital'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Ahuacuotzingo'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Alpoyeca'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Atenango del Río'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Atlixtac'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Copalillo'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Copanatoyac'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Cualac'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Cuetzalan del Progreso'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Chilapa de Álvarez'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Eduardo Neri'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Huamuxtitlán'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Huitzuco de los Figueroa'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Mártir de Cuilapan'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Olinala'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Taxco de Alarcón'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Teloloapan'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Tepecoacuilco de Trujano'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Tixtla de Guerrero'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Tlapa de Comonfort'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Xalpatlahuac'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Zapotitlán Tablas'),
-(232,'Náhuatl','mexicano de Guerrero','Guerrero','Zitlala'),
-(232,'Náhuatl','mexicano de Guerrero','Puebla','Jolalpan'),
-(233,'Náhuatl','mexicano de occidente','Jalisco','Cuautitlán de García Barragán'),
-(234,'Náhuatl','mexicano central de occidente','Michoacán de Ocampo','Aquila'),
-(234,'Náhuatl','mexicano central de occidente','Michoacán de Ocampo','Chinicuila'),
-(234,'Náhuatl','mexicano central de occidente','Michoacán de Ocampo','Coalcomán de Vázquez Pallares'),
-(235,'Náhuatl','mexicano central bajo','Morelos','Ayala'),
-(235,'Náhuatl','mexicano central bajo','Morelos','Jojutla'),
-(236,'Náhuatl','mexicano de Temixco','Morelos','Puente de Ixtla'),
-(236,'Náhuatl','mexicano de Temixco','Morelos','Temixco'),
-(237,'Náhuatl','mexicano de Puente de Ixtla','Morelos','Cuautla'),
-(238,'Náhuatl','mexicano de Tetela del Volcán','Tetela del Volcán'),
-(239,'Náhuatl','mexicano alto de occidente','Nayarit','Acaponeta'),
-(239,'Náhuatl','mexicano alto de occidente','Nayarit','Del Nayar[El Nayar]'),
-(240,'Náhuatl','mexicano del oriente','Tabasco','Cárdenas'),
-(240,'Náhuatl','mexicano del oriente','Tabasco','Comalcalco'),
-(241,'Náhuatl','mexicano del oriente central','Tlaxcala','Chiautempán'),
-(241,'Náhuatl','mexicano del oriente central','Tlaxcala','Mazatecochco de José María Morelos'),
-(241,'Náhuatl','mexicano del oriente central','Tlaxcala','San Francisco Tetlanohcan'),
-(241,'Náhuatl','mexicano del oriente central','Tlaxcala','San Pablo del Monte'),
-(241,'Náhuatl','mexicano del oriente central','Tlaxcala','Santa Cruz Tlaxcala'),
-(241,'Náhuatl','mexicano del oriente central','Tlaxcala','Teolocholco'),
-(242,'Náhuatl','mexicano del centro bajo','Estado de México','Temascaltepec'),
-(243,'Náhuatl','mexicano del centro alto','Distrito Federal','Milpa Alta'),
-(243,'Náhuatl','mexicano del centro alto','Estado de México','Acolman'),
-(243,'Náhuatl','mexicano del centro alto','Estado de México','Coyotepec'),
-(243,'Náhuatl','mexicano del centro alto','Estado de México','Huehuetoca'),
-(243,'Náhuatl','mexicano del centro alto','Estado de México','Nextlalpan'),
-(243,'Náhuatl','mexicano del centro alto','Estado de México','Tecámac'),
-(243,'Náhuatl','mexicano del centro alto','Estado de México','Teoloyucan'),
-(243,'Náhuatl','mexicano del centro alto','Estado de México','Texcoco'),
-(244,'Náhuatl','mexicano del centro','Estado de México','Nicolás Romero'),
-(244,'Náhuatl','mexicano del centro','Estado de México','Tianguistenco'),
-(244,'Náhuatl','mexicano del centro','Estado de México','Xalatlaco'),
-(245,'Náhuatl','mexicano del oriente de Puebla','Puebla','Chichiquila'),
-(245,'Náhuatl','mexicano del oriente de Puebla','Puebla','Chilchotla'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Atlapexco'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Calnali'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Chapulhuacán'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Huejutla de Reyes'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Jaltocan'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Lolotlán'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Tepehuacán de Guerrero'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Tlanchinol'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Tianguistenco'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Xochiatipan'),
-(246,'Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Yacualica'),
-(247,'Oluteco','oluteco','Veracruz de la Llave','Oluta'),
-(248,'Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'),
-(248,'Otomí','otomí de la Sierra','Hidalgo','Huehuetla'),
-(248,'Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'),
-(248,'Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'),
-(248,'Otomí','otomí de la Sierra','Puebla','Chignahuapan'),
-(248,'Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'),
-(248,'Otomí','otomí de la Sierra','Puebla','Jalpan'),
-(248,'Otomí','otomí de la Sierra','Puebla','Honey'),
-(248,'Otomí','otomí de la Sierra','Puebla','Huauchinango'),
-(248,'Otomí','otomí de la Sierra','Puebla','Pahuatlán'),
-(248,'Otomí','otomí de la Sierra','Puebla','Pantepec'),
-(248,'Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'),
-(248,'Otomí','otomí de la Sierra','Puebla','Tlaxco'),
-(248,'Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'),
-(248,'Otomí','otomí de la Sierra','Puebla','Xicotepec'),
-(248,'Otomí','otomí de la Sierra','Puebla','Zihuateutla'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'),
-(248,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Huehuetla'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'),
-(249,'Otomí','otomí de la Sierra','Puebla','Chignahuapan'),
-(249,'Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'),
-(249,'Otomí','otomí de la Sierra','Puebla','Jalpan'),
-(249,'Otomí','otomí de la Sierra','Puebla','Honey'),
-(249,'Otomí','otomí de la Sierra','Puebla','Huauchinango'),
-(249,'Otomí','otomí de la Sierra','Puebla','Pahuatlán'),
-(249,'Otomí','otomí de la Sierra','Puebla','Pantepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Tlaxco'),
-(249,'Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'),
-(249,'Otomí','otomí de la Sierra','Puebla','Xicotepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Zihuateutla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes')
-(249,'Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Huehuetla'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'),
-(249,'Otomí','otomí de la Sierra','Puebla','Chignahuapan'),
-(249,'Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'),
-(249,'Otomí','otomí de la Sierra','Puebla','Jalpan'),
-(249,'Otomí','otomí de la Sierra','Puebla','Honey'),
-(249,'Otomí','otomí de la Sierra','Puebla','Huauchinango'),
-(249,'Otomí','otomí de la Sierra','Puebla','Pahuatlán'),
-(249,'Otomí','otomí de la Sierra','Puebla','Pantepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Tlaxco'),
-(249,'Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'),
-(249,'Otomí','otomí de la Sierra','Puebla','Xicotepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Zihuateutla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Huehuetla'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'),
-(249,'Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'),
-(249,'Otomí','otomí de la Sierra','Puebla','Chignahuapan'),
-(249,'Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'),
-(249,'Otomí','otomí de la Sierra','Puebla','Jalpan'),
-(249,'Otomí','otomí de la Sierra','Puebla','Honey'),
-(249,'Otomí','otomí de la Sierra','Puebla','Huauchinango'),
-(249,'Otomí','otomí de la Sierra','Puebla','Pahuatlán'),
-(249,'Otomí','otomí de la Sierra','Puebla','Pantepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Tlaxco'),
-(249,'Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'),
-(249,'Otomí','otomí de la Sierra','Puebla','Xicotepec'),
-(249,'Otomí','otomí de la Sierra','Puebla','Zihuateutla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'),
-(249,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes')
-(250,'Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'),
-(250,'Otomí','otomí de la Sierra','Hidalgo','Huehuetla'),
-(250,'Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'),
-(250,'Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'),
-(250,'Otomí','otomí de la Sierra','Puebla','Chignahuapan'),
-(250,'Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'),
-(250,'Otomí','otomí de la Sierra','Puebla','Jalpan'),
-(250,'Otomí','otomí de la Sierra','Puebla','Honey'),
-(250,'Otomí','otomí de la Sierra','Puebla','Huauchinango'),
-(250,'Otomí','otomí de la Sierra','Puebla','Pahuatlán'),
-(250,'Otomí','otomí de la Sierra','Puebla','Pantepec'),
-(250,'Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'),
-(250,'Otomí','otomí de la Sierra','Puebla','Tlaxco'),
-(250,'Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'),
-(250,'Otomí','otomí de la Sierra','Puebla','Xicotepec'),
-(250,'Otomí','otomí de la Sierra','Puebla','Zihuateutla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'),
-(250,'Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'),
-(250,'Otomí','otomí de la Sierra','Hidalgo','Huehuetla'),
-(250,'Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'),
-(250,'Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'),
-(250,'Otomí','otomí de la Sierra','Puebla','Chignahuapan'),
-(250,'Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'),
-(250,'Otomí','otomí de la Sierra','Puebla','Jalpan'),
-(250,'Otomí','otomí de la Sierra','Puebla','Honey'),
-(250,'Otomí','otomí de la Sierra','Puebla','Huauchinango'),
-(250,'Otomí','otomí de la Sierra','Puebla','Pahuatlán'),
-(250,'Otomí','otomí de la Sierra','Puebla','Pantepec'),
-(250,'Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'),
-(250,'Otomí','otomí de la Sierra','Puebla','Tlaxco'),
-(250,'Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'),
-(250,'Otomí','otomí de la Sierra','Puebla','Xicotepec'),
-(250,'Otomí','otomí de la Sierra','Puebla','Zihuateutla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'),
-(250,'Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'),
-(251,'Otomí','otomí bajo del noroeste','Queretaro de Arteaga','Amealco de Bonfil'),
-(252,'Otomí','otomí del oeste','Michoacán de Ocampo','Zitácuaro'),
-(253,'Otomí','otomí del oeste del Valle del Mezquital','Hidalgo','Huichapan'),
-(254,'Otomí','otomí del oeste del Valle del Mezquital','Hidalgo','Huichapan'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'),
-(255,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'),
-(256,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'),
-(257,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'),
-(258,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'),
-(259,'Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'),
-(260,'Otomí','otomí de Ixtenco','Tlaxcala','Ixtenco'),
-(261,'Otomí','otomí de Tilapa o del sur','Estado de México','Tianguistenco'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Allende'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Apaseo el Alto'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Capulhuac'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Comonfort'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Cortazar'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Dolores Hidalgo cuna de la Independencia'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Tierra Blanca'),
-(262,'Otomí','otomí del noroeste','Guanajuato','Cortazar'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Ezequiel Montes'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Querétaro'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','San Juan del Río'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Tequisquiapan'),
-(262,'Otomí','otomí del noroeste','Querétaro de Arteaga','Tolimán'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Allende'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Apaseo el Alto'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Capulhuac'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Comonfort'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Cortazar'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Dolores Hidalgo cuna de la Independencia'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Tierra Blanca'),
-(263,'Otomí','otomí del noroeste','Guanajuato','Cortazar'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Ezequiel Montes'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Querétaro'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','San Juan del Río'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Tequisquiapan'),
-(263,'Otomí','otomí del noroeste','Querétaro de Arteaga','Tolimán'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Allende'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Apaseo el Alto'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Capulhuac'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Comonfort'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Cortazar'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Dolores Hidalgo cuna de la Independencia'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Tierra Blanca'),
-(264,'Otomí','otomí del noroeste','Guanajuato','Cortazar'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Ezequiel Montes'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Querétaro'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','San Juan del Río'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Tequisquiapan'),
-(264,'Otomí','otomí del noroeste','Querétaro de Arteaga','Tolimán'),
-(265,'Otomí','otomí del centro','Estado de México','Acambay'),
-(265,'Otomí','otomí del centro','Estado de México','Aculco'),
-(265,'Otomí','otomí del centro','Estado de México','Amanalco de Becerra'),
-(265,'Otomí','otomí del centro','Estado de México','Atlacomulco'),
-(265,'Otomí','otomí del centro','Estado de México','Axapusco'),
-(265,'Otomí','otomí del centro','Estado de México','Calimmaya'),
-(265,'Otomí','otomí del centro','Estado de México','Chapa de Mota'),
-(265,'Otomí','otomí del centro','Estado de México','Huixquilucan'),
-(265,'Otomí','otomí del centro','Estado de México','Jilotepec'),
-(265,'Otomí','otomí del centro','Estado de México','Jilotzingo'),
-(265,'Otomí','otomí del centro','Estado de México','Lerma'),
-(265,'Otomí','otomí del centro','Estado de México','Morelos'),
-(265,'Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'),
-(265,'Otomí','otomí del centro','Estado de México','Nicolás Romero'),
-(265,'Otomí','otomí del centro','Estado de México','San Felipe del Progreso'),
-(265,'Otomí','otomí del centro','Estado de México','Temascalcingo'),
-(265,'Otomí','otomí del centro','Estado de México','Temascaltepec'),
-(265,'Otomí','otomí del centro','Estado de México','Temoaya'),
-(265,'Otomí','otomí del centro','Estado de México','Tianguistenco'),
-(265,'Otomí','otomí del centro','Estado de México','Toluca'),
-(265,'Otomí','otomí del centro','Estado de México','Timilpan'),
-(265,'Otomí','otomí del centro','Estado de México','Villa del Carbón'),
-(265,'Otomí','otomí del centro','Estado de México','Xonacatlán'),
-(265,'Otomí','otomí del centro','Estado de México','Zinacantepec'),
-(266,'Otomí','otomí del centro','Estado de México','Acambay'),
-(266,'Otomí','otomí del centro','Estado de México','Aculco'),
-(266,'Otomí','otomí del centro','Estado de México','Amanalco de Becerra'),
-(266,'Otomí','otomí del centro','Estado de México','Atlacomulco'),
-(266,'Otomí','otomí del centro','Estado de México','Axapusco'),
-(266,'Otomí','otomí del centro','Estado de México','Calimmaya'),
-(266,'Otomí','otomí del centro','Estado de México','Chapa de Mota'),
-(266,'Otomí','otomí del centro','Estado de México','Huixquilucan'),
-(266,'Otomí','otomí del centro','Estado de México','Jilotepec'),
-(266,'Otomí','otomí del centro','Estado de México','Jilotzingo'),
-(266,'Otomí','otomí del centro','Estado de México','Lerma'),
-(266,'Otomí','otomí del centro','Estado de México','Morelos'),
-(266,'Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'),
-(266,'Otomí','otomí del centro','Estado de México','Nicolás Romero'),
-(266,'Otomí','otomí del centro','Estado de México','San Felipe del Progreso'),
-(266,'Otomí','otomí del centro','Estado de México','Temascalcingo'),
-(266,'Otomí','otomí del centro','Estado de México','Temascaltepec'),
-(266,'Otomí','otomí del centro','Estado de México','Temoaya'),
-(266,'Otomí','otomí del centro','Estado de México','Tianguistenco'),
-(266,'Otomí','otomí del centro','Estado de México','Toluca'),
-(266,'Otomí','otomí del centro','Estado de México','Timilpan'),
-(266,'Otomí','otomí del centro','Estado de México','Villa del Carbón'),
-(266,'Otomí','otomí del centro','Estado de México','Xonacatlán'),
-(266,'Otomí','otomí del centro','Estado de México','Zinacantepec'),
-(267,'Otomí','otomí del centro','Estado de México','Acambay'),
-(267,'Otomí','otomí del centro','Estado de México','Aculco'),
-(267,'Otomí','otomí del centro','Estado de México','Amanalco de Becerra'),
-(267,'Otomí','otomí del centro','Estado de México','Atlacomulco'),
-(267,'Otomí','otomí del centro','Estado de México','Axapusco'),
-(267,'Otomí','otomí del centro','Estado de México','Calimmaya'),
-(267,'Otomí','otomí del centro','Estado de México','Chapa de Mota'),
-(267,'Otomí','otomí del centro','Estado de México','Huixquilucan'),
-(267,'Otomí','otomí del centro','Estado de México','Jilotepec'),
-(267,'Otomí','otomí del centro','Estado de México','Jilotzingo'),
-(267,'Otomí','otomí del centro','Estado de México','Lerma'),
-(267,'Otomí','otomí del centro','Estado de México','Morelos'),
-(267,'Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'),
-(267,'Otomí','otomí del centro','Estado de México','Nicolás Romero'),
-(267,'Otomí','otomí del centro','Estado de México','San Felipe del Progreso'),
-(267,'Otomí','otomí del centro','Estado de México','Temascalcingo'),
-(267,'Otomí','otomí del centro','Estado de México','Temascaltepec'),
-(267,'Otomí','otomí del centro','Estado de México','Temoaya'),
-(267,'Otomí','otomí del centro','Estado de México','Tianguistenco'),
-(267,'Otomí','otomí del centro','Estado de México','Toluca'),
-(267,'Otomí','otomí del centro','Estado de México','Timilpan'),
-(267,'Otomí','otomí del centro','Estado de México','Villa del Carbón'),
-(267,'Otomí','otomí del centro','Estado de México','Xonacatlán'),
-(267,'Otomí','otomí del centro','Estado de México','Zinacantepec'),
-(268,'Otomí','otomí del centro','Estado de México','Acambay'),
-(268,'Otomí','otomí del centro','Estado de México','Aculco'),
-(268,'Otomí','otomí del centro','Estado de México','Amanalco de Becerra'),
-(268,'Otomí','otomí del centro','Estado de México','Atlacomulco'),
-(268,'Otomí','otomí del centro','Estado de México','Axapusco'),
-(268,'Otomí','otomí del centro','Estado de México','Calimmaya'),
-(268,'Otomí','otomí del centro','Estado de México','Chapa de Mota'),
-(268,'Otomí','otomí del centro','Estado de México','Huixquilucan'),
-(268,'Otomí','otomí del centro','Estado de México','Jilotepec'),
-(268,'Otomí','otomí del centro','Estado de México','Jilotzingo'),
-(268,'Otomí','otomí del centro','Estado de México','Lerma'),
-(268,'Otomí','otomí del centro','Estado de México','Morelos'),
-(268,'Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'),
-(268,'Otomí','otomí del centro','Estado de México','Nicolás Romero'),
-(268,'Otomí','otomí del centro','Estado de México','San Felipe del Progreso'),
-(268,'Otomí','otomí del centro','Estado de México','Temascalcingo'),
-(268,'Otomí','otomí del centro','Estado de México','Temascaltepec'),
-(268,'Otomí','otomí del centro','Estado de México','Temoaya'),
-(268,'Otomí','otomí del centro','Estado de México','Tianguistenco'),
-(268,'Otomí','otomí del centro','Estado de México','Toluca'),
-(268,'Otomí','otomí del centro','Estado de México','Timilpan'),
-(268,'Otomí','otomí del centro','Estado de México','Villa del Carbón'),
-(268,'Otomí','otomí del centro','Estado de México','Xonacatlán'),
-(268,'Otomí','otomí del centro','Estado de México','Zinacantepec'),
-(269,'Otomí','otomí del centro','Estado de México','Acambay'),
-(269,'Otomí','otomí del centro','Estado de México','Aculco'),
-(269,'Otomí','otomí del centro','Estado de México','Amanalco de Becerra'),
-(269,'Otomí','otomí del centro','Estado de México','Atlacomulco'),
-(269,'Otomí','otomí del centro','Estado de México','Axapusco'),
-(269,'Otomí','otomí del centro','Estado de México','Calimmaya'),
-(269,'Otomí','otomí del centro','Estado de México','Chapa de Mota'),
-(269,'Otomí','otomí del centro','Estado de México','Huixquilucan'),
-(269,'Otomí','otomí del centro','Estado de México','Jilotepec'),
-(269,'Otomí','otomí del centro','Estado de México','Jilotzingo'),
-(269,'Otomí','otomí del centro','Estado de México','Lerma'),
-(269,'Otomí','otomí del centro','Estado de México','Morelos'),
-(269,'Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'),
-(269,'Otomí','otomí del centro','Estado de México','Nicolás Romero'),
-(269,'Otomí','otomí del centro','Estado de México','San Felipe del Progreso'),
-(269,'Otomí','otomí del centro','Estado de México','Temascalcingo'),
-(269,'Otomí','otomí del centro','Estado de México','Temascaltepec'),
-(269,'Otomí','otomí del centro','Estado de México','Temoaya'),
-(269,'Otomí','otomí del centro','Estado de México','Tianguistenco'),
-(269,'Otomí','otomí del centro','Estado de México','Toluca'),
-(269,'Otomí','otomí del centro','Estado de México','Timilpan'),
-(269,'Otomí','otomí del centro','Estado de México','Villa del Carbón'),
-(269,'Otomí','otomí del centro','Estado de México','Xonacatlán'),
-(269,'Otomí','otomí del centro','Estado de México','Zinacantepec'),
-(270,'Paipai','paipai','Baja California','Ensenada'),
-(271,'Pame','pame del norte','San Luis Potosí','Aquismón'),
-(271,'Pame','pame del norte','San Luis Potosí','Ciudad del maíz'),
-(272,'Pame','pame del centro','San Luis Potosí','Lagunillas'),
-(272,'Pame','pame del centro','San Luis Potosí','Rayón'),
-(272,'Pame','pame del centro','San Luis Potosí','Santa Catarina'),
-(272,'Pame','pame del centro','San Luis Potosí','Tamasopo'),
-(273,'Pápago','pápago','Sonora','Altar'),
-(273,'Pápago','pápago','Sonora','Caborca'),
-(273,'Pápago','pápago','Sonora','General Plutarco Elías Calles'),
-(274,'Pápago','pápago','Sonora','Altar'),
-(274,'Pápago','pápago','Sonora','Caborca'),
-(274,'Pápago','pápago','Sonora','General Plutarco Elías Calles'),
-(275,'Pima','pima del norte','Chihuahua','Madera'),
-(275,'Pima','pima del norte','Chihuahua','Moris'),
-(276,'Pima','pima del sur','Chihuahua','Ocampo'),
-(277,'Pima','pima del este','Sonora','Yécora'),
-(278,'Popoloca','popoloca del norte','Puebla','Tlacotepec de Benito Juárez'),
-(279,'Popoloca','popoloca del norte','Puebla','Tlacotepec de Benito Juárez'),
-(280,'Popoloca','popoloca del centro','Puebla','Tepexi de Rodríguez'),
-(281,'Popoloca','popoloca de oriente','Puebla','San Gabriel Chilac'),
-(281,'Popoloca','popoloca de oriente','Puebla','San Vicente Coyotepec'),
-(281,'Popoloca','popoloca de oriente','Puebla','Tepanco de lópez'),
-(281,'Popoloca','popoloca de oriente','Puebla','Tepexi de Rodríguez'),
-(281,'Popoloca','popoloca de oriente','Puebla','Zapotitlán Salinas'),
-(282,'Popoloca','popoloca de oriente','Puebla','San Gabriel Chilac'),
-(282,'Popoloca','popoloca de oriente','Puebla','San Vicente Coyotepec'),
-(282,'Popoloca','popoloca de oriente','Puebla','Tepanco de lópez'),
-(282,'Popoloca','popoloca de oriente','Puebla','Tepexi de Rodríguez'),
-(282,'Popoloca','popoloca de oriente','Puebla','Zapotitlán Salinas'),
-(283,'Popoloca','popoloca de oriente','Puebla','San Gabriel Chilac'),
-(283,'Popoloca','popoloca de oriente','Puebla','San Vicente Coyotepec'),
-(283,'Popoloca','popoloca de oriente','Puebla','Tepanco de lópez'),
-(283,'Popoloca','popoloca de oriente','Puebla','Tepexi de Rodríguez'),
-(283,'Popoloca','popoloca de oriente','Puebla','Zapotitlán Salinas'),
-(284,'Popoloca','popoloca del poniente','Puebla','Santa Inés Ahuatempan'),
-(285,'Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Hueyapan de Ocampo'),
-(285,'Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Soteapan'),
-(285,'Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'),
-(286,'Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Hueyapan de Ocampo'),
-(286,'Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Soteapan'),
-(286,'Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'),
-(287,'Qato’k','mocho','Chiapas','Motozintla'),
-(288,'Qato’k','tuzanteco','Chiapas','Tuzantán'),
-(289,'Q’anjob’al','Q’anjob’al','Campeche','Campeche'),
-(289,'Q’anjob’al','Q’anjob’al','Campeche','Champotón'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','Amatenango de la Frontera'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','San Marcos'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','Catazajá'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','Bella Vista'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','Frontera Comalapa'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','La Independencia'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','La Trinitaria'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','Las Margaritas'),
-(289,'Q’anjob’al','Q’anjob’al','Chiapas','Maravilla Tenejapa'),
-(289,'Q’anjob’al','Q’anjob’al','Quintana Roo','Othón P.Blanco'),
-(290,'Q’eqchí’','Q’eqchí’','Campeche','Campeche'),
-(290,'Q’eqchí’','Q’eqchí’','Quintana Roo','Othón P.Blanco'),
-(291,'Sayulteco','sayulteco','Veracruz de Ignacio de la Llave','Sayula de Alemán'),
-(292,'Sayulteco','sayulteco','Veracruz de Ignacio de la Llave','Sayula de Alemán'),
-(293,'Seri','seri','Sonora','Hermosillo'),
-(293,'Seri','seri','Sonora','Pitiquito'),
-(294,'Tarahumara','Tarahumara del oeste','Chihuahua','Chínipas'),
-(294,'Tarahumara','Tarahumara del oeste','Chihuahua','Maguarichi'),
-(295,'Tarahumara','Tarahumara del norte','Chihuahua','Bocoyna'),
-(295,'Tarahumara','Tarahumara del norte','Chihuahua','Cuautémoc'),
-(295,'Tarahumara','Tarahumara del norte','Chihuahua','Nonoava'),
-(295,'Tarahumara','Tarahumara del norte','Chihuahua','San Francisco de Borja'),
-(296,'Tarahumara','Tarahumara de Cumbres','Chihuahua','Guachochi'),
-(297,'Tarahumara','Tarahumara del centro','Chihuahua','Balleza'),
-(297,'Tarahumara','Tarahumara del centro','Chihuahua','Guachochi'),
-(297,'Tarahumara','Tarahumara del centro','Chihuahua','El Tule'),
-(297,'Tarahumara','Tarahumara del centro','Chihuahua','Morelos'),
-(298,'Tarahumara','Tarahumara del sur','Chihuahua','Guadalupe y calvo'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Coeneo'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Cherán'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Charapan'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Chilchota'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Erongarícuaro'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Los Reyes'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Morelia'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Nahuatzen'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Nuevo Parangaricutiro'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Paracho'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Pátzcuaro'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Quiroga'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Tangamandapio'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Tangancícuaro'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Tingambato'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Tinguindín'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Tzintzuntzan'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Uruapan'),
-(299,'Tarasco','purépecha','Michoacán de Ocampo','Zacapu')
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Coeneo'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Cherán'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Charapan'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Chilchota'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Erongarícuaro'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Los Reyes'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Morelia'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Nahuatzen'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Nuevo Parangaricutiro'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Paracho'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Pátzcuaro'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Quiroga'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Tangamandapio'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Tangancícuaro'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Tingambato'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Tinguindín'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Tzintzuntzan'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Uruapan'),
-(300,'Tarasco','purépecha','Michoacán de Ocampo','Zacapu'),
-(301,'Teko','Teko','Chiapas','Amatenango de la Frontera'),
-(301,'Teko','Teko','Chiapas','Frontera Comalapa'),
-(301,'Teko','Teko','Chiapas','Mazapa de Madero'),
-(302,'Teko','Teko','Chiapas','Amatenango de la Frontera'),
-(302,'Teko','Teko','Chiapas','Frontera Comalapa'),
-(302,'Teko','Teko','Chiapas','Mazapa de Madero'),
-(303,'Tepehua','tepehua del sur','Hidalgo','Huehuetla'),
-(303,'Tepehua','tepehua del sur','Puebla','Pantepec'),
-(304,'Tepehua','tepehua del sur','Hidalgo','Huehuetla'),
-(304,'Tepehua','tepehua del sur','Puebla','Pantepec'),
-(305,'Tepehua','tepehua del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'),
-(306,'Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Tlachichilco'),
-(306,'Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Zontecomatlán de López y Fuentes'),
-(307,'Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Tlachichilco'),
-(307,'Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Zontecomatlán de López y Fuentes'),
-(308,'Tepehua del norte','tepehua del norte','Chihuahua','Guadalupe y Calvo'),
-(308,'Tepehua del norte','tepehua del norte','Chihuahua','Guachochi'),
-(309,'Tepehua del sur','tepehua del sur alto','Durango','Pueblo Nuevo'),
-(309,'Tepehua del sur','tepehua del sur alto','Nayarit','Acaponeta'),
-(309,'Tepehua del sur','tepehua del sur alto','Nayarit','Huajicori'),
-(309,'Tepehua del sur','tepehua del sur alto','Sinaloa','Escuinapa'),
-(310,'Tepehua del sur','tepehua del sur bajo','Durango','Mezquital'),
-(310,'Tepehua del sur','tepehua del sur bajo','Zacatecas','Valparaíso'),
-(311,'Tepehua del sur','tepehua del sur central','Durango','Mezquital'),
-(312,'Texistepequeño','texistepequeño','Veracruz de Ignacio de la Llave','Texistepec'),
-(313,'Tojolabal','tojolabal','Chiapas','Altamirano'),
-(313,'Tojolabal','tojolabal','Chiapas','Comitán de Domínguez'),
-(313,'Tojolabal','tojolabal','Chiapas','La Independencia'),
-(313,'Tojolabal','tojolabal','Chiapas','La Trinitaria'),
-(313,'Tojolabal','tojolabal','Chiapas','Las Margaritas'),
-(313,'Tojolabal','tojolabal','Chiapas','Maravilla Tenejapa'),
-(313,'Tojolabal','tojolabal','Chiapas','Ocosingo'),
-(314,'Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Chiconquiaco'),
-(314,'Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Misantla'),
-(314,'Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Naolinco'),
-(314,'Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Yecuatla'),
-(315,'Totonaco','totonaco central del norte','Puebla','Francisco Z.Mena'),
-(315,'Totonaco','totonaco central del norte','Puebla','Jalpan'),
-(315,'Totonaco','totonaco central del norte','Puebla','Huauchinango'),
-(315,'Totonaco','totonaco central del norte','Puebla','Pantepec'),
-(315,'Totonaco','totonaco central del norte','Puebla','Naupan'),
-(315,'Totonaco','totonaco central del norte','Puebla','Tlacuilotepec'),
-(315,'Totonaco','totonaco central del norte','Puebla','Tlaxco'),
-(315,'Totonaco','totonaco central del norte','Puebla','Venustiano Carranza'),
-(315,'Totonaco','totonaco central del norte','Puebla','Tlaola'),
-(315,'Totonaco','totonaco central del norte','Puebla','Xicotepec'),
-(315,'Totonaco','totonaco central del norte','Puebla','Zihuateutla'),
-(315,'Totonaco','totonaco central del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'),
-(316,'Totonaco','totonaco central del norte','Puebla','Francisco Z.Mena'),
-(316,'Totonaco','totonaco central del norte','Puebla','Jalpan'),
-(316,'Totonaco','totonaco central del norte','Puebla','Huauchinango'),
-(316,'Totonaco','totonaco central del norte','Puebla','Pantepec'),
-(316,'Totonaco','totonaco central del norte','Puebla','Naupan'),
-(316,'Totonaco','totonaco central del norte','Puebla','Tlacuilotepec'),
-(316,'Totonaco','totonaco central del norte','Puebla','Tlaxco'),
-(316,'Totonaco','totonaco central del norte','Puebla','Venustiano Carranza'),
-(316,'Totonaco','totonaco central del norte','Puebla','Tlaola'),
-(316,'Totonaco','totonaco central del norte','Puebla','Xicotepec'),
-(316,'Totonaco','totonaco central del norte','Puebla','Zihuateutla'),
-(316,'Totonaco','totonaco central del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'),
-(317,'Totonaco','totonaco central del norte','Puebla','Francisco Z.Mena'),
-(317,'Totonaco','totonaco central del norte','Puebla','Jalpan'),
-(317,'Totonaco','totonaco central del norte','Puebla','Huauchinango'),
-(317,'Totonaco','totonaco central del norte','Puebla','Pantepec'),
-(317,'Totonaco','totonaco central del norte','Puebla','Naupan'),
-(317,'Totonaco','totonaco central del norte','Puebla','Tlacuilotepec'),
-(317,'Totonaco','totonaco central del norte','Puebla','Tlaxco'),
-(317,'Totonaco','totonaco central del norte','Puebla','Venustiano Carranza'),
-(317,'Totonaco','totonaco central del norte','Puebla','Tlaola'),
-(317,'Totonaco','totonaco central del norte','Puebla','Xicotepec'),
-(317,'Totonaco','totonaco central del norte','Puebla','Zihuateutla'),
-(317,'Totonaco','totonaco central del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'),
-(318,'Totonaco','totonaco del Cerro Xinolatépetl','Puebla','Huauchinango'),
-(319,'Totonaco','totonaco central alto','Veracruz de Ignacio de la Llave','Filomeno Mata'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Cazones'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Coatzintla'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Espinal'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Martínez de la Torre'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Papantla'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Poza Rica de Hidalgo'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tihuatlán'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tecolutla'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tenampulco'),
-(320,'Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tuxpam'),
-(321,'Totonaco','totonaco del río Necaxa','Puebla','Jopala'),
-(322,'Totonaco','totonaco central del sur','Puebla','Ahuacatlán'),
-(322,'Totonaco','totonaco central del sur','Puebla','Atlequizayán'),
-(322,'Totonaco','totonaco central del sur','Puebla','Amixtlán'),
-(322,'Totonaco','totonaco central del sur','Puebla','Camocuautla'),
-(322,'Totonaco','totonaco central del sur','Puebla','Cuetzalan del Progreso'),
-(322,'Totonaco','totonaco central del sur','Puebla','Hermenegildo Galeana'),
-(322,'Totonaco','totonaco central del sur','Puebla','Huehuetla'),
-(322,'Totonaco','totonaco central del sur','Puebla','Hueytamalco'),
-(322,'Totonaco','totonaco central del sur','Puebla','Hueytlalpan'),
-(322,'Totonaco','totonaco central del sur','Puebla','Huitzilan de Serdán'),
-(322,'Totonaco','totonaco central del sur','Puebla','Ixtepec'),
-(322,'Totonaco','totonaco central del sur','Puebla','Jonotla'),
-(322,'Totonaco','totonaco central del sur','Puebla','Jopala'),
-(322,'Totonaco','totonaco central del sur','Puebla','Nauzontla'),
-(322,'Totonaco','totonaco central del sur','Puebla','San Felipe Tepantlán'),
-(322,'Totonaco','totonaco central del sur','Puebla','Tepango de Rodríguez'),
-(322,'Totonaco','totonaco central del sur','Puebla','Tepetzintla'),
-(322,'Totonaco','totonaco central del sur','Puebla','Tuzamapan de Galeana'),
-(322,'Totonaco','totonaco central del sur','Puebla','Zacapoaxtla'),
-(322,'Totonaco','totonaco central del sur','Puebla','Zapotitlán de Méndez'),
-(322,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Chumatlán'),
-(322,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coahuitlán'),
-(322,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coxquihui'),
-(322,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coyutla'),
-(322,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Mecatlán'),
-(322,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Zozocolco de Hidalgo'),
-(323,'Totonaco','totonaco central del sur','Puebla','Ahuacatlán'),
-(323,'Totonaco','totonaco central del sur','Puebla','Atlequizayán'),
-(323,'Totonaco','totonaco central del sur','Puebla','Amixtlán'),
-(323,'Totonaco','totonaco central del sur','Puebla','Camocuautla'),
-(323,'Totonaco','totonaco central del sur','Puebla','Cuetzalan del Progreso'),
-(323,'Totonaco','totonaco central del sur','Puebla','Hermenegildo Galeana'),
-(323,'Totonaco','totonaco central del sur','Puebla','Huehuetla'),
-(323,'Totonaco','totonaco central del sur','Puebla','Hueytamalco'),
-(323,'Totonaco','totonaco central del sur','Puebla','Hueytlalpan'),
-(323,'Totonaco','totonaco central del sur','Puebla','Huitzilan de Serdán'),
-(323,'Totonaco','totonaco central del sur','Puebla','Ixtepec'),
-(323,'Totonaco','totonaco central del sur','Puebla','Jonotla'),
-(323,'Totonaco','totonaco central del sur','Puebla','Jopala'),
-(323,'Totonaco','totonaco central del sur','Puebla','Nauzontla'),
-(323,'Totonaco','totonaco central del sur','Puebla','San Felipe Tepantlán'),
-(323,'Totonaco','totonaco central del sur','Puebla','Tepango de Rodríguez'),
-(323,'Totonaco','totonaco central del sur','Puebla','Tepetzintla'),
-(323,'Totonaco','totonaco central del sur','Puebla','Tuzamapan de Galeana'),
-(323,'Totonaco','totonaco central del sur','Puebla','Zacapoaxtla'),
-(323,'Totonaco','totonaco central del sur','Puebla','Zapotitlán de Méndez'),
-(323,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Chumatlán'),
-(323,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coahuitlán'),
-(323,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coxquihui'),
-(323,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coyutla'),
-(323,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Mecatlán'),
-(323,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Zozocolco de Hidalgo'),
-(324,'Totonaco','totonaco central del sur','Puebla','Ahuacatlán'),
-(324,'Totonaco','totonaco central del sur','Puebla','Atlequizayán'),
-(324,'Totonaco','totonaco central del sur','Puebla','Amixtlán'),
-(324,'Totonaco','totonaco central del sur','Puebla','Camocuautla'),
-(324,'Totonaco','totonaco central del sur','Puebla','Cuetzalan del Progreso'),
-(324,'Totonaco','totonaco central del sur','Puebla','Hermenegildo Galeana'),
-(324,'Totonaco','totonaco central del sur','Puebla','Huehuetla'),
-(324,'Totonaco','totonaco central del sur','Puebla','Hueytamalco'),
-(324,'Totonaco','totonaco central del sur','Puebla','Hueytlalpan'),
-(324,'Totonaco','totonaco central del sur','Puebla','Huitzilan de Serdán'),
-(324,'Totonaco','totonaco central del sur','Puebla','Ixtepec'),
-(324,'Totonaco','totonaco central del sur','Puebla','Jonotla'),
-(324,'Totonaco','totonaco central del sur','Puebla','Jopala'),
-(324,'Totonaco','totonaco central del sur','Puebla','Nauzontla'),
-(324,'Totonaco','totonaco central del sur','Puebla','San Felipe Tepantlán'),
-(324,'Totonaco','totonaco central del sur','Puebla','Tepango de Rodríguez'),
-(324,'Totonaco','totonaco central del sur','Puebla','Tepetzintla'),
-(324,'Totonaco','totonaco central del sur','Puebla','Tuzamapan de Galeana'),
-(324,'Totonaco','totonaco central del sur','Puebla','Zacapoaxtla'),
-(324,'Totonaco','totonaco central del sur','Puebla','Zapotitlán de Méndez'),
-(324,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Chumatlán'),
-(324,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coahuitlán'),
-(324,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coxquihui'),
-(324,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coyutla'),
-(324,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Mecatlán'),
-(324,'Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Zozocolco de Hidalgo'),
-(325,'Triqui','triqui de San Juan Copala','Oaxaca','Santiago Juxtlahuaca'),
-(326,'Triqui','triqui de la media','Oaxaca','San Martín Itunyuso'),
-(327,'Triqui','triqui de la alta','Oaxaca','Putla Villa de Guerrero'),
-(328,'Triqui','triqui de la baja','Oaxaca','Constancia del Rosario'),
-(328,'Triqui','triqui de la baja','Oaxaca','Putla Villa de Guerrero'),
-(329,'Tlahuica','tlahuica','Estado de México','Ocuilán'),
-(330,'Tlapaneco','tlapaneco del sur','Guerrero','Azoyú'),
-(330,'Tlapaneco','tlapaneco del sur','Guerrero','Marquelia'),
-(331,'Tlapaneco','tlapaneco del oeste','Guerrero','Quechultenango'),
-(332,'Tlapaneco','tlapaneco central bajo','Guerrero','Iliatenco'),
-(332,'Tlapaneco','tlapaneco central bajo','Guerrero','Malinaltepec'),
-(332,'Tlapaneco','tlapaneco central bajo','Guerrero','San Luis Acatlán'),
-(333,'Tlapaneco','tlapaneco del suroeste','Guerrero','Acatepec'),
-(333,'Tlapaneco','tlapaneco del suroeste','Guerrero','Ayutla de los Libres'),
-(333,'Tlapaneco','tlapaneco del suroeste','Guerrero','San Luis Acatlán'),
-(333,'Tlapaneco','tlapaneco del suroeste','Guerrero','Zapotitlán Tablas'),
-(334,'Tlapaneco','tlapaneco del este','Guerrero','Acapulco'),
-(334,'Tlapaneco','tlapaneco del este','Guerrero','Atlamajalcingo del Monte'),
-(334,'Tlapaneco','tlapaneco del este','Guerrero','Metlatónoc'),
-(334,'Tlapaneco','tlapaneco del este','Guerrero','Tlapa de Comonfort'),
-(335,'Tlapaneco','tlapaneco del centro','Guerrero','Tlacoapa'),
-(336,'Tlapaneco','tlapaneco del norte','Guerrero','Acatepec'),
-(336,'Tlapaneco','tlapaneco del norte','Guerrero','Copanatoyac'),
-(336,'Tlapaneco','tlapaneco del norte','Guerrero','Tlapa de Comonfort'),
-(336,'Tlapaneco','tlapaneco del norte','Guerrero','Zapotitlán Tablas'),
-(337,'Tlapaneco','tlapaneco del noroeste alto','Guerrero','Atlixtac'),
-(338,'Tlapaneco','tlapaneco del noroeste alto','Guerrero','Atlixtac'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Acala'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Aldama'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Amatenango del Valle'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Chalchihuitán'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Chamula'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Chanal'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Chenalhó'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Chiapa de Corzo'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Chiapilla'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Comitán de Domínguez'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Huixtán'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Ixtapa'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Larráinzar'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Osumacinta'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Oxchuc'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Patelhó'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Pueblo Nuevo Solistahuacán'),
-(339,'Tseltal','tseltal de occidente','Chiapas','San Cristobal de las Casas'),
-(339,'Tseltal','tseltal de occidente','Chiapas','San Lucas'),
-(339,'Tseltal','tseltal de occidente','Chiapas','San Juan Cancuc'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Soyaló'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Tenejapa'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Totolapa'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Tuxtla Gutiérrez'),
-(339,'Tseltal','tseltal de occidente','Chiapas','Zinacantán'),
-(340,'Tseltal','tseltal del norte','Chiapas','Catazajá'),
-(340,'Tseltal','tseltal del norte','Chiapas','La Libertad'),
-(340,'Tseltal','tseltal del norte','Chiapas','Ocosingo'),
-(340,'Tseltal','tseltal del norte','Chiapas','Palenque'),
-(340,'Tseltal','tseltal del norte','Chiapas','sabanilla'),
-(340,'Tseltal','tseltal del norte','Chiapas','Salto de Agua'),
-(340,'Tseltal','tseltal del norte','Chiapas','Sitalá'),
-(340,'Tseltal','tseltal del norte','Chiapas','Tila'),
-(340,'Tseltal','tseltal del norte','Chiapas','Tumbalá'),
-(340,'Tseltal','tseltal del norte','Chiapas','Yajalón'),
-(340,'Tseltal','tseltal del norte','Tabasco','Emiliano Zapata'),
-(341,'Tseltal','tseltal del oriente','Chiapas','Altamirano'),
-(341,'Tseltal','tseltal del oriente','Chiapas','Benemérito de las Americas'),
-(341,'Tseltal','tseltal del oriente','Chiapas','La Independencia'),
-(341,'Tseltal','tseltal del oriente','Chiapas','Las Margaritas'),
-(341,'Tseltal','tseltal del oriente','Chiapas','Maravilla Tenejapa'),
-(341,'Tseltal','tseltal del oriente','Chiapas','Marqués de comillas'),
-(341,'Tseltal','tseltal del oriente','Chiapas','Ocosingo'),
-(341,'Tseltal','tseltal del oriente','Tabasco','Balancán'),
-(342,'Tseltal','tseltal del sur','Chiapas','Ángel Albino Corzo'),
-(342,'Tseltal','tseltal del sur','Chiapas','Cintalapa'),
-(342,'Tseltal','tseltal del sur','Chiapas','Chicomuselo'),
-(342,'Tseltal','tseltal del sur','Chiapas','Frontera Comalapa'),
-(342,'Tseltal','tseltal del sur','Chiapas','La Concordia'),
-(342,'Tseltal','tseltal del sur','Chiapas','La Trinitaria'),
-(342,'Tseltal','tseltal del sur','Chiapas','Montecristo de Guerrero'),
-(342,'Tseltal','tseltal del sur','Chiapas','Socoltenango'),
-(342,'Tseltal','tseltal del sur','Chiapas','Tzimol'),
-(342,'Tseltal','tseltal del sur','Chiapas','Venustiano Carranza'),
-(343,'Tsotsil','tsotsil del este alto','Chiapas','Huixtán'),
-(343,'Tsotsil','tsotsil del este alto','Chiapas','Las Margaritas'),
-(344,'Tsotsil','tsotsil del noroeste','Chiapas','Aldama'),
-(344,'Tsotsil','tsotsil del noroeste','Chiapas','Chalchihuitán'),
-(344,'Tsotsil','tsotsil del noroeste','Chiapas','Chenalhó'),
-(344,'Tsotsil','tsotsil del noroeste','Chiapas','Mitontic'),
-(344,'Tsotsil','tsotsil del noroeste','Chiapas','Pantelhó'),
-(345,'Tsotsil','tsotsil del norte bajo','Chiapas','Acala'),
-(345,'Tsotsil','tsotsil del norte bajo','Chiapas','Totolapa'),
-(345,'Tsotsil','tsotsil del norte bajo','Chiapas','Venustiano Carranza'),
-(346,'Tsotsil','tsotsil del centro','Chiapas','Chamula'),
-(346,'Tsotsil','tsotsil del centro','Chiapas','Las Margaritas'),
-(346,'Tsotsil','tsotsil del centro','Chiapas','Teopisca'),
-(347,'Tsotsil','tsotsil de este bajo','Chiapas','Berriozabal'),
-(347,'Tsotsil','tsotsil de este bajo','Chiapas','Ixtapa'),
-(347,'Tsotsil','tsotsil de este bajo','Chiapas','San Lucas'),
-(347,'Tsotsil','tsotsil de este bajo','Chiapas','Zinacantán'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Amatán'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Bochi'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','El Bosque'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Huitiupán'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Ixhuatán'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Jitotol'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Larráinzar'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Ocozocoautla de Espinosa'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Pueblo Nuevo Solistahuacán'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Sabanilla'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','San Andrés Duraznal'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Santiago el Pinar'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Simojovel'),
-(348,'Tsotsil','tsotsil del norte alto','Chiapas','Soyaló'),
-(349,'Tsotsil','tsotsil de los Altos','Chiapas','San Cristóbal de las Casas'),
-(350,'Yaqui','yaqui','Sonora','Bácum'),
-(350,'Yaqui','yaqui','Sonora','Cajeme'),
-(350,'Yaqui','yaqui','Sonora','Empalme'),
-(350,'Yaqui','yaqui','Sonora','Guaymas'),
-(350,'Yaqui','yaqui','Sonora','San Ignacio Río Muerto'),
-(351,'Zapoteco','zapoteco de Texmelucan','Oaxaca','San Lorenzo Texmelucan'),
-(352,'Zapoteco','Zapoteco de la Sierra sur, noroeste bajo','Oaxaca','Villa Sola de Vega'),
-(353,'Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santa María Zaniza'),
-(353,'Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santiago Textitlán'),
-(353,'Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Villa Sola de Vega'),
-(354,'Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santa María Zaniza'),
-(354,'Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santiago Textitlán'),
-(354,'Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Villa Sola de Vega'),
-(355,'Zapoteco','Zapoteco de San Antonino el Alto','Oaxaca','San Antonino el Alto'),
-(356,'Zapoteco','Zapoteco de la Sierra sur, oeste bajo','Oaxaca','San Miguel Mixtepec'),
-(356,'Zapoteco','Zapoteco de la Sierra sur, oeste bajo','Oaxaca','Santa Cruz Mixtepec'),
-(357,'Zapoteco','Zapoteco de la Sierra sur, norooeste alto','Oaxaca','Santa María Lachixío'),
-(357,'Zapoteco','Zapoteco de la Sierra sur, norooeste alto','Oaxaca','San Vicente Lachixío'),
-(358,'Zapoteco','Zapoteco de San Miguel Aloápam','Oaxaca','Zapoteco de San Miguel Aloápam'),
-(359,'Zapoteco','Zapoteco serrano, del noroeste','Oaxaca','Abejones'),
-(359,'Zapoteco','Zapoteco serrano, del noroeste','Oaxaca','Santa María Jaltianguis'),
-(360,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Nuevo Zoquiápam'),
-(360,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Juan Evangelista Analco'),
-(360,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Miguel del Río'),
-(360,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Pablo Malcuiltianguis'),
-(360,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Santa Catarina Ixtepeji'),
-(361,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Nuevo Zoquiápam'),
-(361,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Juan Evangelista Analco'),
-(361,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Miguel del Río'),
-(361,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Pablo Malcuiltianguis'),
-(361,'Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Santa Catarina Ixtepeji'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','Capulálpam de Méndez'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','Guelatao de Juárez'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','Natividad'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','San Juan Chicomezúchil'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','San Miguel Amatlán'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','Santa Catarina Lachatao'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','Santa María Yavesía'),
-(362,'Zapoteco','Zapoteco serrano, bajo','Oaxaca','Santiago Xiacuí'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Ixtlán de Juárez'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Ildelfonso Villa Alta'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Juan Yaeé'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Juan Yatzona'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Miguel Yotao'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Santiago Lalopa'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Domingo Roayaga'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Villa Talea de Castro'),
-(363,'Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Tanetze de Zaragoza'),
-(364,'Zapoteco','Zapoteco de Santa María Temaxcalapa','Oaxaca','Santa María Temaxcalapa'),
-(365,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Comaltepec'),
-(365,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Lalana'),
-(365,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','Santiago Choápam'),
-(366,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Comaltepec'),
-(366,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Lalana'),
-(366,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','Santiago Choápam'),
-(367,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Comaltepec'),
-(367,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Lalana'),
-(367,'Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','Santiago Choápam'),
-(368,'Zapoteco','Zapoteco de Santiago Yaveo','Oaxaca','Santiago Yaveo'),
-(369,'Zapoteco','Zapoteco de Santiago Yaveo','Oaxaca','Santiago Yaveo'),
-(370,'Zapoteco','Zapoteco serrano, del este','Oaxaca','San Ildefonso Villa Alta'),
-(371,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'),
-(371,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(371,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'),
-(371,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'),
-(371,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'),
-(372,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'),
-(372,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(372,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'),
-(372,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'),
-(372,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'),
-(373,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'),
-(373,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(373,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'),
-(373,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'),
-(373,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'),
-(374,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'),
-(374,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(374,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'),
-(374,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'),
-(374,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'),
-(375,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'),
-(375,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(375,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'),
-(375,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'),
-(375,'Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'),
-(376,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Andrés Solaga'),
-(376,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Bartolomé Zoogocho'),
-(376,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(376,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santiago Zoochila'),
-(376,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santa María Yalina'),
-(377,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Andrés Solaga'),
-(377,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Bartolomé Zoogocho'),
-(377,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(377,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santiago Zoochila'),
-(377,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santa María Yalina'),
-(378,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Andrés Solaga'),
-(378,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Bartolomé Zoogocho'),
-(378,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Baltazar Yatzachi el Bajo'),
-(378,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santiago Zoochila'),
-(378,'Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santa María Yalina'),
-(379,'Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Juan Tabaá'),
-(379,'Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Andrés Solaga'),
-(380,'Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Juan Tabaá'),
-(380,'Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Andrés Solaga'),
-(381,'Zapoteco','zapoteco de Santiago Laxopa','Oaxaca','Santiago Laxopa'),
-(382,'Zapoteco','zapoteco de Santiago Laxopa','Oaxaca','Santiago Laxopa'),
-(383,'Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Francisco Cajonos'),
-(383,'Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Mateo Cajonos.'),ç
-(383,'Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Pablo Yaganiza'),
-(384,'Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Francisco Cajonos'),
-(384,'Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Mateo Cajonos.'),ç
-(384,'Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Pablo Yaganiza'),
-(385,'Zapoteco','zapoteco serrano, del oeste medio','Oaxaca','Santa Ana Yareni'),
-(385,'Zapoteco','zapoteco serrano, del oeste medio','Oaxaca','Teococuilco de Marcos Pérez'),
-(386,'Zapoteco','zapoteco de Valles del sur','Oaxaca','Coatecas Altas'),
-(386,'Zapoteco','zapoteco de Valles del sur','Oaxaca','Heróica Ciudad de Ejutla de Crespo'),
-(386,'Zapoteco','zapoteco de Valles del sur','Oaxaca','San José del Progreso'),
-(387,'Zapoteco','zapoteco de San Vicente Coatlán','Oaxaca','San Vicente Coatlán'),
-(388,'Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','Miahuatlán de Porfirio Díaz'),
-(388,'Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','San Jerónimo Coatlán'),
-(388,'Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','San Miguel Coatlán'),
-(388,'Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','San Pablo Coatlán'),
-(389,'Zapoteco','zapoteco de la costa oeste','Oaxaca','San Baltazar Loxicha'),
-(389,'Zapoteco','zapoteco de la costa oeste','Oaxaca','San Jerónimo Coatlán'),
-(389,'Zapoteco','zapoteco de la costa oeste','Oaxaca','Santa María Tonameca'),
-(389,'Zapoteco','zapoteco de la costa oeste','Oaxaca','Santo Domingo de Morelos'),
-(390,'Zapoteco','zapoteco de la costa oeste','Oaxaca','San Baltazar Loxicha'),
-(390,'Zapoteco','zapoteco de la costa oeste','Oaxaca','San Jerónimo Coatlán'),
-(390,'Zapoteco','zapoteco de la costa oeste','Oaxaca','Santa María Tonameca'),
-(390,'Zapoteco','zapoteco de la costa oeste','Oaxaca','Santo Domingo de Morelos'),
-(391,'Zapoteco','zapoteco de la costa oeste','Oaxaca','San Baltazar Loxicha'),
-(391,'Zapoteco','zapoteco de la costa oeste','Oaxaca','San Jerónimo Coatlán'),
-(391,'Zapoteco','zapoteco de la costa oeste','Oaxaca','Santa María Tonameca'),
-(391,'Zapoteco','zapoteco de la costa oeste','Oaxaca','Santo Domingo de Morelos'),
-(392,'Zapoteco','zapoteco de la costa central','Oaxaca','Candelaria Loxicha'),
-(392,'Zapoteco','zapoteco de la costa central','Oaxaca','Pluma Hidalgo'),
-(392,'Zapoteco','zapoteco de la costa central','Oaxaca','San Agustín Loxicha'),
-(392,'Zapoteco','zapoteco de la costa central','Oaxaca','San Bartolomé Loxicha'),
-(392,'Zapoteco','zapoteco de la costa central','Oaxaca','San Pedro Pochutla'),
-(392,'Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Colotepec'),
-(392,'Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Huatulco; Santa María Tonameca'),
-(393,'Zapoteco','zapoteco de la costa central','Oaxaca','Candelaria Loxicha'),
-(393,'Zapoteco','zapoteco de la costa central','Oaxaca','Pluma Hidalgo'),
-(393,'Zapoteco','zapoteco de la costa central','Oaxaca','San Agustín Loxicha'),
-(393,'Zapoteco','zapoteco de la costa central','Oaxaca','San Bartolomé Loxicha'),
-(393,'Zapoteco','zapoteco de la costa central','Oaxaca','San Pedro Pochutla'),
-(393,'Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Colotepec'),
-(393,'Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Huatulco; Santa María Tonameca'),
-(394,'Zapoteco','zapoteco de la Sierra sur, central','Oaxaca',' Miahuatlán de Porfirio Díaz'),
-(394,'Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','San Andrés Paxtlán'),
-(394,'Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santa Cruz Xitla'),
-(394,'Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santa Catarina Cuixtla'),
-(394,'Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santa Lucía Miahuatlán'),
-(394,'Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santo Tomás Tamazulapan'),
-(395,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Carlos Yautepec'),
-(395,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Cristóbal Amatlán'),
-(395,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San José Lachiguiri'),
-(395,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Juan Mixtepec Distrito 26'),
-(395,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mixtepec Distrito 26'),
-(395,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mártir Quiéchapa'),
-(396,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Carlos Yautepec'),
-(396,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Cristóbal Amatlán'),
-(396,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San José Lachiguiri'),
-(396,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Juan Mixtepec Distrito 26'),
-(396,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mixtepec Distrito 26'),
-(396,'Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mártir Quiéchapa'),
-(397,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','San Carlos Yautepec'),
-(397,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catalina Quierí'),
-(397,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catarina Quioquitani'),
-(398,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','San Carlos Yautepec'),
-(398,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catalina Quierí'),
-(398,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catarina Quioquitani'),
-(399,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','San Carlos Yautepec'),
-(399,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catalina Quierí'),
-(399,'Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catarina Quioquitani'),
-(400,'Zapoteco','zapoteco de Quiavicuzas','Oaxaca','San Carlos Yautepec'),
-(401,'Zapoteco','zapoteco de Quiavicuzas','Oaxaca','San Carlos Yautepec'),
-(402,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Cristóbal Amatlán'),
-(402,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Francisco Logueche'),
-(402,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Ildefonso Amatlán'),
-(402,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Luis Amatlán'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Oaxaca: San Juan Ozolotepec'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Marcial Ozolotepec'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Mateo Piñas'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Miguel Suchixtepec'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Pedro El Alto'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Sebastián Río Hondo'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santa María Ozolotepec'),
-(403,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santo Domingo Ozolotepec'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Oaxaca: San Juan Ozolotepec'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Marcial Ozolotepec'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Mateo Piñas'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Miguel Suchixtepec'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Pedro El Alto'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Sebastián Río Hondo'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santa María Ozolotepec'),
-(404,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santo Domingo Ozolotepec'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Oaxaca: San Juan Ozolotepec'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Marcial Ozolotepec'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Mateo Piñas'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Miguel Suchixtepec'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Pedro El Alto'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Sebastián Río Hondo'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santa María Ozolotepec'),
-(405,'Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santo Domingo Ozolotepec'),
-(406,'Zapoteco','zapoteco de Mixtepec','Oaxaca','San Cristóbal Amatlán'),
-(407,'Zapoteco','zapoteco de la Sierra sur, del sureste bajo','Oaxaca','Santiago Xánica'),
-(408,'Zapoteco','zapoteco de la Sierra sur, del sureste bajo','Oaxaca','Santiago Xánica.'),
-(409,'Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca',' San Francisco Ozolotepec'),
-(409,'Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca','San Juan Ozolotepec'),
-(410,'Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca',' San Francisco Ozolotepec'),
-(410,'Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca','San Juan Ozolotepec'),
-(411,'Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca',' San Francisco Ozolotepec'),
-(411,'Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca','San Juan Ozolotepec'),
-(412,'Zapoteco','zapoteco de Santa María Quiegolani','Oaxaca','Santa María Quiegolani'),
-(413,'Zapoteco','zapoteco de San Bartolo Yautepec','Oaxaca','San Bartolo Yautepec'),
-(414,'Zapoteco','zapoteco de Asunción Tlacolulita','Oaxaca','Asunción Tlacolulita'),
-(415,'Zapoteco','zapoteco de la costa este','Oaxaca','San Francisco Ozolotepec'),
-(415,'Zapoteco','zapoteco de la costa este','Oaxaca','San Juan Ozolotepec'),
-(415,'Zapoteco','zapoteco de la costa este','Oaxaca','San Miguel del Puerto'),
-(415,'Zapoteco','zapoteco de la costa este','Oaxaca','Santiago Xánica'),
-(416,'Zapoteco','zapoteco de Valles, oeste','Oaxaca',' Magdalena Mixtepec'),
-(416,'Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Bernardo Mixtepec'),
-(416,'Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Cuatro Venados'),
-(416,'Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Huixtepec'),
-(417,'Zapoteco','zapoteco de Valles, oeste','Oaxaca',' Magdalena Mixtepec'),
-(417,'Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Bernardo Mixtepec'),
-(417,'Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Cuatro Venados'),
-(417,'Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Huixtepec'),
-(418,'Zapoteco','zapoteco de San Felipe Tejalápam','Oaxaca','San Felipe Tejalápam'),
-(419,'Zapoteco','zapoteco de Valles, noroeste','Oaxaca','San Agustín Etla'),
-(419,'Zapoteco','zapoteco de Valles, noroeste','Oaxaca','San Andrés Zautla; San Pablo Etla'),
-(419,'Zapoteco','zapoteco de Valles, noroeste','Oaxaca','Santa María Atzompa'),
-(419,'Zapoteco','zapoteco de Valles, noroeste','Oaxaca','Santo Tomás Mazaltepec'),
-(419,'Zapoteco','zapoteco de Valles, noroeste','Oaxaca','Villa de Etla'),
-(420,'Zapoteco','zapoteco de Valles, norte','Oaxaca','San Andrés Huayápam'),
-(420,'Zapoteco','zapoteco de Valles, norte','Oaxaca','Santo Domingo Tonaltepec'),
-(420,'Zapoteco','zapoteco de Valles, norte','Oaxaca','Tlalixtac de Cabrera'),
-(421,'Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Oaxaca de Juárez'),
-(421,'Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','San Antonio de la Cal'),
-(421,'Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','San Raymundo Jalpan; San Sebastián Tutla'),
-(421,'Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Santa Cruz Xoxocotlán'),
-(421,'Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Santa Lucía del Camino; Santa María Guelacé'),
-(421,'Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Santa María del Tule'),
-(422,'Zapoteco','zapoteco de Valles, del noroeste bajo','Oaxaca',' San Bartolo Coyotepec; ;'),
-(422,'Zapoteco','zapoteco de Valles, del noroeste bajo','Oaxaca','Santa María Coyotepec'),
-(422,'Zapoteco','zapoteco de Valles, del noroeste bajo','Oaxaca',' Villa de Zaachila'),
-(423,'Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Asunción Ocotlán'),
-(423,'Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Magdalena Ocotlán; San Pedro Mártir'),
-(424,'Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Asunción Ocotlán'),
-(424,'Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Magdalena Ocotlán; San Pedro Mártir'),
-(425,'Zapoteco','zapoteco de Zimatlán de Álvarez','Oaxaca','Zimatlán de Álvarez'),
-(426,'Zapoteco','zapoteco de Valles, del oeste central','Oaxaca','Santa Ana Zegache'),
-(426,'Zapoteco','zapoteco de Valles, del oeste central','Oaxaca','Santa Ana Zegache'),
-(427,'Zapoteco','zapoteco de Valles, del centro','Oaxaca','Santo Tomás Jalieza'),
-(428,'Zapoteco','zapoteco de Valles, de suroeste alto','Oaxaca','Santiago Apóstol'),
-(429,'Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','Ocotlán de Morelos'),
-(429,'Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','San Antonino Castillo Velasco'),
-(429,'Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','San Jerónimo Taviche'),
-(429,'Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','San Martín de los Cansecos'),
-(429,'Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','Santa Catarina Minas'),
-(429,'Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','Santa Lucía Ocotlán'),
-(430,'Zapoteco','zapoteco de Valles, del centro bajo','Oaxaca','San Miguel Tilquiápam.'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Magdalena Teitipac'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Bartolomé Quialana'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Francisco Lachigoló'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Jerónimo Tlacochahuaya'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Juan Teitipac'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Lucas Quiavini'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Martín Tilcajete'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Sebastián Abasolo'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Sebastián Teitipac'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santa Ana del Valle'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santa Cruz Papalutla'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santo Tomás Jalieza'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santo Tomás Jalieza'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Tlacolula de Matamoros'),
-(431,'Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Villa Díaz Ordaz'),
-(432,'Zapoteco','zapoteco de Valles, del este central','Oaxaca','San Dionisio Ocotepec'),
-(432,'Zapoteco','zapoteco de Valles, del este central','Oaxaca','Santiago Matatlán'),
-(433,'Zapoteco','zapoteco de Valles, del este central','Oaxaca','San Dionisio Ocotepec'),
-(433,'Zapoteco','zapoteco de Valles, del este central','Oaxaca','Santiago Matatlán'),
-(434,'Zapoteco','zapoteco de San Baltazar Chichicapam','Oaxaca','San Baltazar Chichicapam'),
-(435,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Dionisio Ocotepec'),
-(435,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Juan del Río; San Lorenzo Albarradas'),
-(435,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pablo Villa de Mitla'),
-(435,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pedro Totolapa'),
-(435,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','Santiago Matatlán'),
-(436,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Dionisio Ocotepec'),
-(436,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Juan del Río; San Lorenzo Albarradas'),
-(436,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pablo Villa de Mitla'),
-(436,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pedro Totolapa'),
-(436,'Zapoteco','zapoteco de Valles, del este medio','Oaxaca','Santiago Matatlán')
-(437,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','Nejapa de Madero'),
-(437,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Carlos Yautepec'),
-(437,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Pedro Quiatoni'),
-(438,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','Nejapa de Madero'),
-(438,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Carlos Yautepec'),
-(438,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Pedro Quiatoni'),
-(439,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','Nejapa de Madero'),
-(439,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Carlos Yautepec'),
-(439,'Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Pedro Quiatoni'),
-(440,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Lorenzo Albarradas'),
-(440,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Pablo Villa de Mitla'),
-(440,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Santo Domingo Albarradas'),
-(440,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Villa Díaz Ordaz'),
-(441,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Lorenzo Albarradas'),
-(441,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Pablo Villa de Mitla'),
-(441,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Santo Domingo Albarradas'),
-(441,'Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Villa Díaz Ordaz'),
-(442,'Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Guevea de Humbolt'),
-(442,'Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santa María Totolapilla'),
-(442,'Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santiago Lachiguiri'),
-(443,'Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Guevea de Humbolt'),
-(443,'Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santa María Totolapilla'),
-(443,'Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santiago Lachiguiri'),
-(444,'Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Guevea de Humboldt'),
-(444,'Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Santa María Guienagati'),
-(445,'Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Guevea de Humboldt'),
-(445,'Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Santa María Guienagati'),
-(446,'Zapoteco','zapoteco de Petapa','Oaxaca',' Santa María Petapa'),
-(446,'Zapoteco','zapoteco de Petapa','Oaxaca',' Santo Domingo Petapa.'),
-(447,'Zapoteco','zapoteco de Petapa','Oaxaca',' Santa María Petapa'),
-(447,'Zapoteco','zapoteco de Petapa','Oaxaca',' Santo Domingo Petapa.'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca',' Asunción Ixtaltepec'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Ciudad Ixtepec'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Chahuites'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','El Espinal'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Juchitán de Zaragoza'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Magdalena Tlacotepec'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Reforma de Pineda'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Salina Cruz'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Blas Atempa'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Francisco Ixhuatán'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Juan Guichicovi'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Comitancillo'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Huilotepec'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Tapanatepec'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Jalapa del Marqués'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Mixtequilla'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Xadani'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santiago Laollaga'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Chihuitán'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Ingenio'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Tehuantepec'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Zanatepec'),
-(448,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Unión Hidalgo'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca',' Asunción Ixtaltepec'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Ciudad Ixtepec'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Chahuites'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','El Espinal'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Juchitán de Zaragoza'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Magdalena Tlacotepec'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Reforma de Pineda'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Salina Cruz'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Blas Atempa'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Francisco Ixhuatán'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Juan Guichicovi'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Comitancillo'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Huilotepec'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Tapanatepec'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Jalapa del Marqués'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Mixtequilla'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Xadani'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santiago Laollaga'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Chihuitán'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Ingenio'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Tehuantepec'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Zanatepec'),
-(449,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Unión Hidalgo'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca',' Asunción Ixtaltepec'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Ciudad Ixtepec'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Chahuites'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','El Espinal'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Juchitán de Zaragoza'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Magdalena Tlacotepec'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Reforma de Pineda'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Salina Cruz'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Blas Atempa'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Francisco Ixhuatán'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Juan Guichicovi'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Comitancillo'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Huilotepec'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Tapanatepec'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Jalapa del Marqués'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Mixtequilla'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Xadani'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santiago Laollaga'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Chihuitán'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Ingenio'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Tehuantepec'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Zanatepec'),
-(450,'Zapoteco','zapoteco de la planicie costera','Oaxaca','Unión Hidalgo'),
-(451,'Zoque','zoque del centro','Chiapas','Copainalá'),
-(451,'Zoque','zoque del centro','Chiapas','Ostuacán'),
-(451,'Zoque','zoque del centro','Chiapas','Tecpatán.'),
-(452,'Zoque','zoque del este','Chiapas','Ixhuatán'),
-(452,'Zoque','zoque del este','Chiapas','Ocotepec'),
-(452,'Zoque','zoque del este','Chiapas','Tapilula'),
-(453,'Zoque','zoque del norte alto','Chiapas',' Amatán'),
-(453,'Zoque','zoque del norte alto','Chiapas','Chapultenango'),
-(453,'Zoque','zoque del norte alto','Chiapas','Ixtacomitán'),
-(453,'Zoque','zoque del norte alto','Chiapas','Juárez'),
-(453,'Zoque','zoque del norte alto','Chiapas','Pichucalco'),
-(453,'Zoque','zoque del norte alto','Chiapas','Solosuchiapa'),
-(454,'Zoque','zoque del norte bajo','Chiapas','Ocotepec'),
-(454,'Zoque','zoque del norte bajo','Chiapas','Pantepec'),
-(454,'Zoque','zoque del norte bajo','Chiapas','Rayón'),
-(454,'Zoque','zoque del norte bajo','Chiapas','Tapalapa'),
-(455,'Zoque','zoque del noroeste','Chiapas','Francisco León'),
-(456,'Zoque','zoque del sureste','Chiapas','Jitotol'),
-(457,'Zoque','zoque del oeste','Oaxaca','San Miguel Chimalapas'),
-(457,'Zoque','zoque del oeste','Oaxaca','Santa María Chimalapas'),
-(458,'Zoque','zoque del oeste','Oaxaca','San Miguel Chimalapas'),
-(458,'Zoque','zoque del oeste','Oaxaca','Santa María Chimalapas')
+insert into `lenguas` (`lengua`, `nombre`, `estado`, `municipio`) VALUES
+( 'Akateko', 'Akateko', 'Campeche', 'Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Akateko', 'Akateko', 'Chiapas', 'Frontera Comalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Akateko', 'Akateko', 'Chiapas', 'La Trinitaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Akateko', 'Akateko', 'Quintana Roo', 'Othón P. Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Tlacoachistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Xochistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Tlacoachistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Xochistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Tlacoachistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del norte', 'Guerrero','Xochistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del sur','Guerrero', 'Azoyú'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del sur','Guerrero', 'Cuajinicuilapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo del sur','Guerrero', 'Ometepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo bajo del este', 'Oaxaca','Santa María Ipalapa' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo bajo del este', 'Oaxaca','Santa María Ipalapa' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo alto del este', 'Oaxaca','San Pedro Amuzgos' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo alto del este', 'Oaxaca','San Pedro Amuzgos' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Amuzgo', 'Amuzgo alto del este', 'Oaxaca','San Pedro Amuzgos' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Awakateko', 'Awakateko', 'Campeche','Champotón' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Ayapaneco', 'Ayapaneco', 'Tabasco','Jalpa de Méndez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora de Rosarito', 'Nayarit','Rosamorada' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora de Dolores', 'Nayarit','Del Nayar [El Nayar]' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora meseño', 'Nayarit','Del Nayar [El Nayar]' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora de Jesús María', 'Nayarit','Del Nayar [El Nayar]' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora francisqueño', 'Nayarit','Del Nayar [El Nayar]' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora tereseño', 'Durango','Mezquital' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora tereseño', 'Nayarit','Acaponeta' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora tereseño', 'Nayarit','Del Nayar [El Nayar]' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora presideño', 'Nayarit','Ruiz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cora', 'Cora corapeño','Nayarit', 'Rosamorada'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cucapá', 'Cucapá ','Baja California', 'Mexicali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cucapá', 'Cucapá ','Sonora', 'San Luis Colorado'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Concepción Pápalo' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Francisco Chapulapa' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Juan Bautista Cuicatlán' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Juan Tepeuxila' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','San Pedro Sochiapam' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Santa María Pápalo' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Santa María Tlalixtac' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Santos Reyes Pápalo' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del centro', 'Oaxaca','Valerio Trujano' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Andrés Teotilalpam' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Francisco Chapulapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','Santa María Tlalixtac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Andrés Teotilalpam' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','San Francisco Chapulapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del norte', 'Oaxaca','Santa María Tlalixtac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Andrés Teotilalpam' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Francisco Chapulapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Pedro Teutila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','Santa María Tlalixtac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Andrés Teotilalpam' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Francisco Chapulapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','San Pedro Teutila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Cuicateco', 'Cuicateco del oriente', 'Oaxaca','Santa María Tlalixtac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino occidental alto', 'Oaxaca','San Jacinto Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino occidental alto', 'Oaxaca','Santa Cruz Zenzontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino occidental alto', 'Oaxaca','Santiago Ixtayutla' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino occidental bajo', 'Oaxaca','San Pedro Mixtepec Distrito 22'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino occidental bajo', 'Oaxaca','Tataltepec de Valdés'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino occidental bajo', 'Oaxaca','Villa de Tututepec de Melchor Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','San Juan Quiahije'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','San Miguel Panixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','San Pedro Juchatengo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','Santa Catarina Juquila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','Santiago Tetepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','Santiago Yaitepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','Tataltepec de Valdés'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino central', 'Oaxaca','Villa Sola de Vega'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino oriental bajo', 'Oaxaca','San Gabriel Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino oriental bajo', 'Oaxaca','Santa María Temaxcaltepec' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino oriental bajo', 'Oaxaca','Santos Reyes Nopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino oriental alto', 'Oaxaca','San Gabriel Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino oriental alto', 'Oaxaca','San Juan Lachao'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chatino', 'Chatino de zacatepec', 'Oaxaca','Santa Catarina Juquila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chichimeco jonaz', 'Chichimeco jonaz', 'Guanajuato','San Luis de la Paz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Jalapa de Díaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San José Chiltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Juan Cotzocón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Lucas Ojitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca',' San Juan Bautista Tuxtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Cosamaloapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Isla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Juan Rodríguez Clara'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tierra Blanca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tres Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Uxpanapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Jalapa de Díaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San José Chiltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Juan Cotzocón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Lucas Ojitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca',' San Juan Bautista Tuxtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Cosamaloapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Isla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Juan Rodríguez Clara'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tierra Blanca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tres Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Uxpanapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Jalapa de Díaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San José Chiltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Juan Cotzocón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca','San Lucas Ojitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Oaxaca',' San Juan Bautista Tuxtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Cosamaloapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Isla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Juan Rodríguez Clara'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tierra Blanca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Tres Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del norte', 'Veracruz de Ignacio de la Llave','Uxpanapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco central bajo', 'Oaxaca','San Juan Bautista Valle Nacional'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco central bajo', 'Oaxaca','San Juan Bautista Valle Nacional'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco central bajo', 'Oaxaca','San Juan Bautista Valle Nacional'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del sureste alto', 'Oaxaca','Ayotzintepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del sureste bajo', 'Oaxaca','San Juan Lalana' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco','Chinanteco del sureste bajo', 'Oaxaca','San Juan Lalana' ); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del oeste central alto', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del oeste central alto', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Juan Bautista Atatlahuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Juan Bautista Valle Nacional'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Juan Quiotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','San Pedro Yolox'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco de la sierra', 'Oaxaca','Santiago Comaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del norte', 'Oaxaca','San Andrés Teotilalpam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del norte', 'Oaxaca','San Juan Bautista Tlacoatzintepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del oeste central alto', 'Oaxaca','San Pedro Sochiapám'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del oeste centra bajo', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del oeste centra bajo', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del oeste centra bajo', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del sureste medio', 'Oaxaca','San Juan Petlapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del sureste medio', 'Oaxaca','Santiago Choapam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del sureste medio', 'Oaxaca','Santiago Jocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco del sureste medio', 'Veracruz de Ignacio de la Llave',' Playa Vicente'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central', 'Oaxaca','Ayotzintepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca',' San José Chiltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca','San Juan Bautista Valle Nacional'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca',' Santa María Jacatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca',' Santiago Jocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central', 'Oaxaca','Ayotzintepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central', 'Oaxaca','San Felipe Usila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca',' San José Chiltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca','San Juan Bautista Valle Nacional'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca',' Santa María Jacatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chinanteco', 'Chinanteco central','Oaxaca',' Santiago Jocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del oeste','Oaxaca','Ocotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'San Francisco Teopan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'Tequixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'San Miguel Tulancingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'San Pedro Nopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'Santa Magdalena Jicotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del oeste','Oaxaca', 'Teotongo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Chocholteco','Chocholteco del sur','Oaxaca', 'San Miguel Huautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Chocholteco','Chocholteco del sur','Oaxaca', 'Santa María nativitas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del este','Oaxaca','San Juan Bautista Coixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chocholteco', 'Chocholteco del este','Oaxaca','San Miguel Chicahua'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Asunción Tlacolulita'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Magdalena Tequisistlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','San Miguel Tenango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Santa María Quiegolani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca alto','Oaxaca','Santo Domingo Tehuantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca bajo','Oaxaca','Santa María Ecatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca de la costa','Oaxaca','San Pedro Huamelula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca de la costa','Oaxaca','Santiago Astata'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Oaxaca','chontal de Oaxaca de la costa','Oaxaca','Santo Domingo Tehuantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Tabasco','chontal de Tabasco central','Tabasco','Jalpa de Méndez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Tabasco','chontal de Tabasco central','Tabasco','Nacajuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Tabasco','chontal de Tabasco del este','Tabasco','Centro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Tabasco','chontal de Tabasco del sureste', 'Tabasco','Macuspana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'chontal de Tabasco','chontal de Tabasco del norte', 'Tabasco','Centla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chuj','Chuj', 'Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chuj','Chuj', 'Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chuj','Chuj', 'Campeche','La Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chuj','Chuj', 'Campeche','La Trinitaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chuj','Chuj', 'Campeche','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chuj','Chuj', 'Campeche','Maravilla Tenejapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+( 'Chuj','Chuj', 'Campeche','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Amatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Huitiupán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Maravilla Tenejapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Oxchuc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Palenque'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','sabanilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Salto de agua'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Tila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Chiapas','Yajalón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Tabasco','Macuspana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del noroeste','Tabasco','Tacotalpa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del sureste','Campeche','Calakmul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del sureste','Chiapas','Benemérito de las Américas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del sureste','Chiapas','Catazajá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del sureste','Chiapas','Marqués de comillas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del sureste','Chiapas','Ocosingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del sureste','Chiapas','Tumbalá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('ch’ol','ch’ol del sureste','Tabasco','Balancán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Guarijío','guarijío del norte','Chihuahua','Chínipas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Guarijío','guarijío del norte','Chihuahua','Moris'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Guarijío','guarijío del norte','Chihuahua','Uruachi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Guarijío','guarijío del sur','Sonora','Álamos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Guarijío','guarijío del sur','Sonora','Quiriego'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Aquismón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Ciudad Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Coxcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Huehuetlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','San Antonio'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','San Vicente Tancuayalab'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tamuín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tancanhuitz de Santos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanlajás'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanquián de Escobedo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Xilitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Aquismón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Ciudad Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Coxcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Huehuetlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','San Antonio'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','San Vicente Tancuayalab'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tamuín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tancanhuitz de Santos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanlajás'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Tanquián de Escobedo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del occidente', 'San Luis Potosi','Xilitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Platón Sánchez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tempoal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Platón Sánchez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco del centro', 'Veracruz Ignacio de la Llave','Tempoal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Cerro Azul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chinampa de Gorostiza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chontla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Citlaltépetl'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Ixcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Naranjos Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tamalín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tantima'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tepetzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Cerro Azul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chinampa de Gorostiza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Chontla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Citlaltépetl'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Ixcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Naranjos Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tamalín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tantima'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huasteco','Huasteco de oriente','Veracruz Ignacio de la Llave','Tepetzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huave','Huave del oeste','Oaxaca','Juchitán de Zaragoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huave','Huave del oeste','Oaxaca','San Mateo del Mar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huave','Huave del este','Oaxaca','San Dionisio del Mar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huave','Huave del este','Oaxaca','San Francisco del Mar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del norte','Nayarit','Del Nayar[El Nayar]'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del norte','Nayarit','La yesca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del norte','Nayarit','Rosamorada'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del norte','Nayarit','San Blas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del norte','Nayarit','Santiago'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del norte','Nayarit','Ixcuintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del norte','Nayarit','Mezquital'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del sur','Jalisco','Bolaños'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del sur','Jalisco','San Martín de Bolaños'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del sur','Jalisco','Villa Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del este','Jalisco','Mezquitic'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Huichol','Huichol del oeste','Jalisco','Huejuquilla el Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Ixcateco','ixcateco','Oaxaca','Santa María Ixcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Ixil','Ixil Chajuleño','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Ixil','Ixil Chajuleño','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Ixil','Ixil nebajeño','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Jakalteko','Jakalteko','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Jakalteko','Jakalteko','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Jakalteko','Jakalteko','Chiapas','Amatenango de la Frontera'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Jakalteko','Jakalteko','Chiapas','Bella Vista'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Jakalteko','Jakalteko','Chiapas','Frontera Comalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Jakalteko','Jakalteko','Chiapas','la Trinitaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Jakalteko','Jakalteko','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kaqchikel','Kaqchikel','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kaqchikel','Kaqchikel','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kaqchikel','Kaqchikel','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kickapoo','Kickapoo','Coahuila de Zaragoza','Múzquiz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kiliwa','Kiliwa','Baja California','Ensenada'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kumiai','Kumiai','Baja California','Ensenada'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kumiai','Kumiai','Baja California','Playas del Rosarito'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Kumiai','Kumiai','Baja California','Tecate'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Ku’ahl','Ku’ahl','Baja California','Ensenada'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('K’iche’','K’iche’(oriental)','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('K’iche’','K’iche’(oriental)','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('K’iche’','K’iche’(oriental)','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('K’iche’','K’iche’(oriental)','Chiapas','Marqués de comillas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('K’iche’','K’iche’(oriental)','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('K’iche’','K’iche’(occidental)','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('K’iche’','K’iche’(central)','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Lacandón','Lacandón','Chiapas','Ocosingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la frontera','Chiapas','Amatenango de la Frontera'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la frontera','Chiapas','Bejucal de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la frontera','Chiapas','Comalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la frontera','Chiapas','La Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la frontera','Chiapas','La Trinitaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la frontera','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la frontera','Chiapas','Maravilla Tenejapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del norte','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del norte','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del norte','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del sur','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del sur','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del sur','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la sierra','Chiapas','Bella Vista'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la sierra','Chiapas','El Porvenir'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la sierra','Chiapas','La Grandeza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la sierra','Chiapas','Mazapa de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la sierra','Chiapas','Motozintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam de la sierra','Chiapas','Siltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Cacahoatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Huehuetán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Huixtla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Tapachula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Tuxtla Chico'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','tuzantlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','unión Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Cacahoatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Huehuetán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Huixtla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Tapachula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','Tuxtla Chico'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','tuzantlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mam','Mam del Soconusco','Chiapas','unión Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Matlatzinca','Matlatzinca','Estado de México','Temascaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Calakmul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Calkiní'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Candelaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Escárcega'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Hecelchakán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Hopelchén'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Campeche','Tenabo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Quintana Roo','Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Quintana Roo','Felipe Carrillo Puerto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Quintana Roo','José María Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Quintana Roo','Lázaro Cárdenas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Campeche)','Quintana Roo','Solidaridad'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Río Lagartos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Sacalum'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Samahil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','San Felipe'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Santa Elena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Seyé'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Sinanché'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Sotuta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Sudzal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Suma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tahdziú'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tahmek'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Teabo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Teckal de venegas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tekantó'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tekax'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tekit'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tekom'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Telchac Pueblo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Temax'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values 
+('Maya','maya(Quintana Roo)','Quintana Roo','Temozón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tepakán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tetiz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Teya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Ticul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Timucuy'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tinum'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tixcacalcupul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tixkokob'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tixméhuac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo', 'Tixpehual'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tizimín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tunkás'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Tzucacab'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Uayma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Yaxkukul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Quintana Roo)','Quintana Roo','Yobaín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Abalá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Acanceh'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Akil Baca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Bokobá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Buctzotz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Cacalchén'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Calotmul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Cansahcab'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Cantamayec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Celestún'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Cenotillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chacsinkín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chankom'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chapab'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chemax'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chichimilá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chicxulub Pueblo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chikindzonot'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chocholá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Chumayel'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Conkal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Cuncunul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Cuzamá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Dzan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Dzemul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Dzidzantú'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Dzilam de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Dzitás'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Dzoncauich'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Espita'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Halachó'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Hocabá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Hoctún'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Homún'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Hunucma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Huhí'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Ixil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Izamal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Kanasín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Kantunil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Kaua'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Kinchil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Maní'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Mama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Maxcanú'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Mayapán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Mérida'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Mocochá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Motul'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Muna'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Muxupip'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Opichén'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Oxkutzcab'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Panabá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Peto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Maya','maya(Yucatán)','Yucatán','Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sonora','Álamos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sonora','Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sonora','Cajeme'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sonora','Etchojoa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sonora','Huatabampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sonora','Navojoa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sonora','San Ignacio Río Muerto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sinaloa','Ahome'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sinaloa','Angostura'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sinaloa','Choix'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sinaloa','El Fuerte'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mayo','mayo','Sinaloa','Guasave'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Almoloya de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Atlacomulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Donato Guerra'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','El oro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Ixtapan del Oro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Ixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Jiquipilco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Jocotitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','San Felipe del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Valle de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Villa de Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Villa Victoria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Michoacan de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Angangueo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de oriente','Estado de México','Susupuato'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de occidente','Estado de México','Atlacomulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de occidente','Estado de México','Temascalcingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de occidente','Estado de México','Villa de Victoria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de occidente','Estado de México','Michoacán de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazahua','Mazahua de occidente','Estado de México','Zitácuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del noroeste','Oaxaca','Acatlán de Pérez Figueroa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del noroeste','Oaxaca','San Miguel Soyaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de la presa bajo','Oaxaca','San Pedro Ixcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del este bajo','Oaxaca','San Felipe Jalapa de Díaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del este bajo','Oaxaca','San Pedro Teutila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del sureste','Oaxaca','Chiquihuitlán de Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del sureste','Oaxaca','San Bartolomé Ayautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del sureste','Oaxaca','Chiquihuitlán de Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del sureste','Oaxaca','San Bartolomé Ayautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de Eloxochitlán','Oaxaca','Eloxochitlán de Flores Magón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del centro','Oaxaca','Huatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del centro','Oaxaca','Huatla de Jiménez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del centro','Oaxaca','Santa María la Asunción'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del suroeste','Oaxaca','Mazatlán Villa de Flores'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del suroeste','Oaxaca','San Juan de los Cues'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del suroeste','Oaxaca','Santa María Tecomavaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de Huehuetlán','Oaxaca','San Francisco Huehuetlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de Tecóatl','Oaxaca','San Jerónimo Tecóatl'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de la presa alto','Oaxaca','San José Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de la presa alto','Oaxaca','San José Tenango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del oeste','Oaxaca','San Lucas Zoquiapam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del oeste','Oaxaca','San Martín Toxpalan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del norte','Oaxaca','San Mateo Yoloxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del norte','Oaxaca','Santa María Chilchotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del norte','Veracruz','Tezonapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del norte','Oaxaca','San Mateo Yoloxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del norte','Oaxaca','Santa María Chilchotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco del norte','Veracruz','Tezonapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de Ocopetatillo','Oaxaca','San Pedro Ocopetatillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de Acatepec','Oaxaca','Santa Cruz Acatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de Puebla','Puebla','San Lorenzo cuaunecuiltitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mazateco','Mazateco de Puebla','Puebla','Santa Ana Ateixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del norte','Oaxaca','Santa María Tlahuitoltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del norte','Oaxaca','Santo de Roayaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del norte','Oaxaca','Totontepec Villa de Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del centro','Oaxaca','San Pedro y San Pablo Ayutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del centro','Oaxaca','Santa María Tlahuitoltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del centro','Oaxaca','Tamazulapam del Espíritu Santo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del sur','Oaxaca','Mixistlán de la Reforma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del sur','Oaxaca','Santa María Tepantlali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe alto del sur','Oaxaca','Santo Domingo Tepuxtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe medio del este','Oaxaca','San Juan Cotzocón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe medio del este','Oaxaca','San Juan Juquila Mixes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe medio del este','Oaxaca','San Miguel Quetzaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe medio del este','Oaxaca','San Pedro Ocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe medio del este','Oaxaca','Santa María Alotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe medio del este','Oaxaca','Santiago Atitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe medio del oeste','Oaxaca','Asunción Cacalotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe bajo','Oaxaca','Camotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe bajo','Oaxaca','Camotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe bajo','Oaxaca','Matías Romero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe bajo','Oaxaca','Mazatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe bajo','Oaxaca','San Juan Guichicovi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe bajo','Oaxaca','Santo Domingo Petapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixe','mixe bajo','Oaxaca','Santo Domingo Tehuantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero del noroeste central','Guerrero','Alcozáuca de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Atlamajalcingo','Guerrero','Atlamajalcingo del Monte'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Chochoapa','Guerrero','Metlatónoc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Coapanatoyac','Guerrero','Copanatoyac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Coapanatoyac','Guerrero','Copanatoyac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Igualapa','Guerrero','Igualapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Igualapa','Guerrero','Igualapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco central de Guerrero','Guerrero','Malinaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco central de Guerrero','Guerrero','Malinaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero del este medio','Guerrero','Metlatónoc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero del este medio','Guerrero','Metlatónoc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero del este medio','Guerrero','Metlatónoc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Tlacoachistlahuaca','Guerrero','Tlacoachistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Tlalixtaquilla de Maldonado','Guerrero','Tlalixtaquilla de Maldonado'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero del norte','Guerrero','Alpoyeca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero del norte','Guerrero','Tlapa de Comonfort'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero del norte central','Guerrero','Xalpatláhuac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Xochistlahuaca','Guerrero','Xochistlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Tlahuapa','Guerrero','Alcozáuca de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero central alto','Guerrero','Malinaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero central alto','Guerrero','Xalpatláhuac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Xochapa','Guerrero','Alcozáuca de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Zoyatlán de Juárez','Guerrero','Alcozáuca de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Zoyatlán de Juárez','Guerrero','Alcozáuca de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Ayutla','Guerrero','Ayutla de los Libres'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Luis Acatlán','Guerrero','San Luis Acatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa este','Guerrero','Azoyú'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa este','Guerrero','Cuajinicuilapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa occidental','Guerrero','Juan R.Escudero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa occidental','Guerrero','San Marcos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa occidental','Guerrero','Tecoanapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa central','Guerrero','Copala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa central','Guerrero','Cautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Guerrero de la costa central','Guerrero','Florencio Villareal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Villa de Tututepec','Oaxaca','Villa de Tututepec de Melchor Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santa María Huazolotitlán','Oaxaca','Santa María Huazolotitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Ixtayutla','Oaxaca','Santiago Ixtayutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','San Agustín Chayuco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','San Andrés Huaxpaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','San Miguel Tlacamama');
+insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','Santa Catarina Mechoacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa central','Oaxaca','Santiago Tetepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa noroeste','Oaxaca','San Juan Colorado'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa noroeste','Oaxaca','San Sebastián Ixcapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa central baja','Oaxaca','San Pedro Atoyac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Oaxaca de la costa central baja','Oaxaca','Santiago Jamiltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Sierra sur oeste','Oaxaca','San Juan Cacahuatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Sierra sur oeste','Oaxaca','Santa María Zacatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santiago Amoltepec','Oaxaca','Santiago Amoltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santa Cruz Itundujia','Oaxaca','Santa Cruz Itundujia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Yosondúa','Oaxaca','Santiago Yosondúa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santa Lucía Monteverde','Oaxaca','Santa Lucía Monteverde'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de sur bajo','Oaxaca','Chalcatongo de Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del sur bajo','Oaxaca','San Miguel El Grande'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del sur bajo','Oaxaca','Santa María Yolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Yosonotú','Oaxaca','Santa Catarina Yosonotú'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del sur medio','Oaxaca','San Esteban Atatlahuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del sur medio','Oaxaca','Santa Cruz Tacahua'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del sur medio','Oaxaca','Ixcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Pedro Molinos','Oaxaca','San Pedro Molinos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santa María Yosoyúa','Oaxaca','Santa María Yosoyúa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Mateo Peñasco','Oaxaca','San Mateo Peñasco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Agustín Tlacotepec','Oaxaca','San Agustín Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Antonio Sinicahua','Oaxaca','San Antonio Sinicahua'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del sureste central','Oaxaca','San Bartolomé Yucuañe'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del sureste central','Oaxaca','Santa Catarina Ticuá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco central','Oaxaca','Magdalena Peñasco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco central','Oaxaca','San Miguel Achiutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco central','Oaxaca','Santa Catarina Tayata'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del suroeste central','Oaxaca','Heroica Ciudad de Tlaxiaco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del suroeste central','Oaxaca','Santa Cruz Nundaco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del suroeste','Oaxaca','Santa María Yucuchiti'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del suroeste','Oaxaca','Santiago Nuyoó'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de ñumi','Oaxaca','San Juan Numi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de ñumi','Oaxaca','San Juan Numi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de oeste central','Oaxaca','San Juan Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de oeste central','Oaxaca','San Martín Itunyoso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de oeste central','Oaxaca','Santiago Nundiche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de oeste','Oaxaca','Coicoyán de las Flores'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de oeste','Oaxaca','San Martín Peras'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de oeste','Oaxaca','San Sebastián Tecomaxtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del norte bajo','Oaxaca','San Antonino Monte Verde'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del norte bajo','Oaxaca','San Pedro y San pablo Teposcolula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del norte bajo','Oaxaca','San Sebastián Nicananduta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del norte bajo','Oaxaca','Santiago Yolomecatl'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del norte bajo','Oaxaca','Villa de Chilapa de Díaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del norte bajo','Oaxaca','Villa de Tamazulápam del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Miguel Piedras','Oaxaca','San Miguel Piedras'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Antonio Huitepec','Oaxaca','San Antonio Huitepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santa María Peñoles','Oaxaca','Santa María Peñoles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco bajo de Valles','Oaxaca','Cuilapam de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco bajo de Valles','Oaxaca','San Andrés Ixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco bajo de Valles','Oaxaca','San Pedro Ixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco bajo de Valles','Oaxaca','Santa Cruz Xoxocotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco bajo de Valles','Oaxaca','Santa María Atzompa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco bajo de Valles','Oaxaca','Santiago Tlazoyaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco alto de Valles','Oaxaca','San Andrés Nuxiño'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco alto de Valles','Oaxaca','San Francisco Telixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del este','Oaxaca','Asunción Nochistlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del este','Oaxaca','Santo Domingo Nuxaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del este','Oaxaca','San Pedro Coxcaltepec Cántaros'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santa Inés de Zaragoza','Oaxaca','Santa Inés de Zaragoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del este central','Oaxaca','San Francisco Jaltepetongo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del este central','Oaxaca','San Juan Diuxi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del este central','Oaxaca','Santiago Tilantongo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste medio','Oaxaca','Tezoatlán de Segura y Luna'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste medio','Oaxaca','Heroica Ciudad de Huajapan de León'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste medio','Oaxaca','Tezoatlán de Segura y Luna'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Calihuala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','San Agustín Atenango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','San Francisco Tlalpancingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','San Jorge Nuchita'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','San Juan Ihualtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','San Mateo Nejapam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','San Miguel Ahuehuetitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','San Miguel Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Santiago Cacaloxtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Santiago Juxtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Santiago Tamazola'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Santiago Yucuyachi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Santo Reyes Tepejillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Santiago del Río'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Silacayoapam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Tezoatlán de Segura y Luna'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del oeste alto','Oaxaca','Zapotitlán Palmas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Santo Domingo Tonalá','Oaxaca','Santo Domingo Tonalá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste central alto','Oaxaca','Tezoatlán de Segura y luna');
+insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste central bajo','Oaxaca','Tezoatlán de Segura y luna'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Juan Tamazola','Oaxaca','San Juan Tamazola'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste','Oaxaca','Asunción Nochixtlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste','Oaxaca','San Juan Bautista Coixtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste','Oaxaca','San Miguel Chicahua'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste','Oaxaca','San Miguel Huatla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste','Oaxaca','Santa María Apazco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco del noroeste','Oaxaca','Santiago Apoala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de San Pedro Tidaá','Oaxaca','San Pedro Tidaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Mitlatongo','Oaxaca','Asunción Nochixtlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Mixteco','mixteco de Coatzóspam','Oaxaca','San Juan Coatzóspam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Atempan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Ayotoxco de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuautempan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuetzalan del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Chignautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Huetamalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Atempan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Ayotoxco de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuautempan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Cuetzalan del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Chignautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra, noroeste de Puebla','Puebla','Huetamalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Chiconcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Jopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Juan Galindo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Naupan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Tlapacoya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Chiconcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Jopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Juan Galindo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Naupan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Tlapacoya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Chiconcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Jopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Juan Galindo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Naupan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Tlapacoya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del noroeste central','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Cosoleacaque'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Mecayapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Pajapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo','Veracruz de Ignacio de la Llave','Zaragoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chalma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chiconamel'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Citlaltépetl'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','llamatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tamalín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chalma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chiconamel'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Citlaltépetl'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','llamatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tamalín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chalma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Chiconamel'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Citlaltépetl'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','llamatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tamalín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca Veracruzana','Veracruz de Ignacio de la Llave','Tantoyuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Aquismón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Axtla de Terrazas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ciudad Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ébano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Huehuetlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Matlapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','San Martín Chalchicuahutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamazunchale'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampamolón Corona'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamuín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tancanhuitz de Santos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tanquián de Escobedo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Xilitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Aquismón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Axtla de Terrazas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ciudad Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ébano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Huehuetlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Matlapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','San Martín Chalchicuahutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamazunchale'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampamolón Corona'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamuín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tancanhuitz de Santos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tanquián de Escobedo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Xilitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Aquismón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Axtla de Terrazas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ciudad Valles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Ébano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Huehuetlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Matlapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','San Martín Chalchicuahutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamazunchale'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tampamolón Corona'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tamuín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tancanhuitz de Santos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Tanquián de Escobedo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Huasteca potosina','San Luis Potosí','Xilitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de Oaxaca','Oaxaca','San Martín Toxpalan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de Oaxaca','Oaxaca','San Miguel Amatitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de Oaxaca','Oaxaca','Santa María Teopoxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de Oaxaca','Oaxaca','Santiago Texcalcingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de Oaxaca','Oaxaca','Teotitlán de Flores Magón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Altepexi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Coxcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San Gabriel Chilac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San José Mihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Zinacatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Altepexi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Coxcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San Gabriel Chilac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','San José Mihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, sur','Puebla','Zinacatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Ajalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Astacinga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coxcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coyomeapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Nicolás Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','San Sebastián Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Santiago Mihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuipango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tlacotepec de Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Vicente Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Zoquitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Ajalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Astacinga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coxcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coyomeapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Nicolás Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','San Sebastián Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Santiago Mihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuipango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tlacotepec de Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Vicente Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Zoquitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Ajalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Astacinga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coxcatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Coyomeapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Nicolás Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','San Sebastián Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Santiago Mihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tehuipango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Tlacotepec de Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Vicente Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra negra, norte','Puebla','Zoquitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Acultzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Camerino Z.Mendoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Coetzala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixhuatlancillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixtaczoquitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Los Reyes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Magdalena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Mixtla de Altamirano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Nogales'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Omealca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Rafael Delgado'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','San Andrés Tenejapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Soledad Atzompa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tequila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Texhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tezonapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','tlilapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Xoxocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Acultzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Camerino Z.Mendoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Coetzala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixhuatlancillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Ixtaczoquitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Los Reyes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Magdalena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Mixtla de Altamirano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Nogales'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Omealca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Rafael Delgado'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','San Andrés Tenejapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Soledad Atzompa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tequila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Texhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Tezonapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','tlilapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl central de Veracruz','Veracruz de Ignacio de la Llave','Xoxocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra oeste de Puebla ','Puebla','Ahuacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra oeste de Puebla ','Puebla','Chignahuapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl de la Sierra oeste de Puebla ','Puebla','Zacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl alto de norte de Puebla','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl alto de norte de Puebla','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl alto de norte de Puebla','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl alto de norte de Puebla','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Soteapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Soteapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del Istmo bajo','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Acajete'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Acteopan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Atoyatempan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Calpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Cohuecán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Huaquechula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Huatlatlahuca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Huejotzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Nealticán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Ocoyucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Puebla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','San Andrés Cholula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Teopantlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Tepeojuma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Tianguismanalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','nahuátl del centro de Puebla','Puebla','Tlapanalá');
+insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano bajo de occidente','Colima','Armería'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano bajo de occidente','Colima','Cuautémoc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano bajo de occidente','Colima','Ixtlahuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano bajo de occidente','Colima','Manzanillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','Mexicano de noroeste','Durango','Mezquital'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Ahuacuotzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Alpoyeca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Atenango del Río'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Atlixtac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Copalillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Copanatoyac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Cualac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Cuetzalan del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Chilapa de Álvarez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Eduardo Neri'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Huamuxtitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Huitzuco de los Figueroa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Mártir de Cuilapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Olinala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Taxco de Alarcón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Teloloapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Tepecoacuilco de Trujano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Tixtla de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Tlapa de Comonfort'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Xalpatlahuac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Zapotitlán Tablas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Guerrero','Zitlala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Guerrero','Puebla','Jolalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de occidente','Jalisco','Cuautitlán de García Barragán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano central de occidente','Michoacán de Ocampo','Aquila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano central de occidente','Michoacán de Ocampo','Chinicuila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano central de occidente','Michoacán de Ocampo','Coalcomán de Vázquez Pallares'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano central bajo','Morelos','Ayala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano central bajo','Morelos','Jojutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Temixco','Morelos','Puente de Ixtla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Temixco','Morelos','Temixco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Puente de Ixtla','Morelos','Cuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de Tetela del Volcán','Morelos','Tetela del Volcán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano alto de occidente','Nayarit','Acaponeta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano alto de occidente','Nayarit','Del Nayar[El Nayar]'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente','Tabasco','Cárdenas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente','Tabasco','Comalcalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente central','Tlaxcala','Chiautempán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente central','Tlaxcala','Mazatecochco de José María Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente central','Tlaxcala','San Francisco Tetlanohcan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente central','Tlaxcala','San Pablo del Monte'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente central','Tlaxcala','Santa Cruz Tlaxcala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente central','Tlaxcala','Teolocholco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro bajo','Estado de México','Temascaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Distrito Federal','Milpa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Estado de México','Acolman'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Estado de México','Coyotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Estado de México','Huehuetoca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Estado de México','Nextlalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Estado de México','Tecámac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Estado de México','Teoloyucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro alto','Estado de México','Texcoco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro','Estado de México','Nicolás Romero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro','Estado de México','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del centro','Estado de México','Xalatlaco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente de Puebla','Puebla','Chichiquila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano del oriente de Puebla','Puebla','Chilchotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Atlapexco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Calnali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Chapulhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Huejutla de Reyes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Jaltocan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Lolotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Tepehuacán de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Tlanchinol'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Xochiatipan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Náhuatl','mexicano de la Huasteca Hidalguense','Hidalgo','Yacualica'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Oluteco','oluteco','Veracruz de la Llave','Oluta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Chignahuapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Chignahuapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes');
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Chignahuapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Chignahuapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes');
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Chignahuapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Acaxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tenango de Doria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Hidalgo','Tulancingo de Bravo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Chignahuapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Honey'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Castillo de Teayo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Chicontepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coatzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Huayacocotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Ixtlahuacán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Temapache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Texcatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Tihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zacualpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de la Sierra','Veracruz Ignacio de la Llave','Zontecomatlán de lópez y Fuentes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí bajo del noroeste','Queretaro de Arteaga','Amealco de Bonfil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del oeste','Michoacán de Ocampo','Zitácuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del oeste del Valle del Mezquital','Hidalgo','Huichapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del oeste del Valle del Mezquital','Hidalgo','Huichapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Actopan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ajacuba'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Alfajayucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Almoloya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atitalaquía'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Atotonilco el Grande'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Calnali'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cardonal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chapulhuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Chilcuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Cuautepec de Hinojosa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Eloxochitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Francisco I.Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Huasca de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Ixmiquilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Jacala de Ledezma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Metztitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Mixquiahuala de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Nicolás Flores'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Pacula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Progreso de Obregón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Agustín Tlaxiaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Bartolo Tutotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','San Salvador'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Santiago Anaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tasquillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeapulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepehuacán de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepeji del Río de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tepetitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tezontepec de Aldama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tlahuitepa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Tula de Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zempoala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del Valle del Mezquital','Hidalgo','Zimapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de Ixtenco','Tlaxcala','Ixtenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí de Tilapa o del sur','Estado de México','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Apaseo el Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Capulhuac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Comonfort'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Cortazar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Dolores Hidalgo cuna de la Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Tierra Blanca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Cortazar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Ezequiel Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Querétaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','San Juan del Río'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Tequisquiapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Tolimán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Apaseo el Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Capulhuac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Comonfort'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Cortazar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Dolores Hidalgo cuna de la Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Tierra Blanca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Cortazar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Ezequiel Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Querétaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','San Juan del Río'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Tequisquiapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Tolimán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Allende'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Apaseo el Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Capulhuac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Comonfort'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Cortazar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Dolores Hidalgo cuna de la Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Tierra Blanca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Guanajuato','Cortazar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Amealco de Bonfil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Cadereyta de Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','El Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Ezequiel Montes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Querétaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','San Juan del Río'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Tequisquiapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del noroeste','Querétaro de Arteaga','Tolimán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Acambay'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Aculco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Amanalco de Becerra'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Atlacomulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Axapusco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Calimmaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Chapa de Mota'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Huixquilucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Lerma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Nicolás Romero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','San Felipe del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascalcingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temoaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Toluca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Timilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Villa del Carbón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Xonacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Zinacantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Acambay'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Aculco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Amanalco de Becerra'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Atlacomulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Axapusco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Calimmaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Chapa de Mota'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Huixquilucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Lerma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Nicolás Romero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','San Felipe del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascalcingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temoaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Toluca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Timilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Villa del Carbón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Xonacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Zinacantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Acambay'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Aculco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Amanalco de Becerra'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Atlacomulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Axapusco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Calimmaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Chapa de Mota'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Huixquilucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Lerma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Nicolás Romero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','San Felipe del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascalcingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temoaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Toluca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Timilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Villa del Carbón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Xonacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Zinacantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Acambay'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Aculco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Amanalco de Becerra'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Atlacomulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Axapusco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Calimmaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Chapa de Mota'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Huixquilucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Lerma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Nicolás Romero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','San Felipe del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascalcingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temoaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Toluca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Timilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Villa del Carbón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Xonacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Zinacantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Acambay'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Aculco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Amanalco de Becerra'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Atlacomulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Axapusco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Calimmaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Chapa de Mota'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Huixquilucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Jilotzingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Lerma'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Naucalpan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Nicolás Romero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','San Felipe del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascalcingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temascaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Temoaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Tianguistenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Toluca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Timilpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Villa del Carbón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Xonacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Otomí','otomí del centro','Estado de México','Zinacantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Paipai','paipai','Baja California','Ensenada'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pame','pame del norte','San Luis Potosí','Aquismón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pame','pame del norte','San Luis Potosí','Ciudad del maíz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pame','pame del centro','San Luis Potosí','Lagunillas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pame','pame del centro','San Luis Potosí','Rayón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pame','pame del centro','San Luis Potosí','Santa Catarina'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pame','pame del centro','San Luis Potosí','Tamasopo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pápago','pápago','Sonora','Altar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pápago','pápago','Sonora','Caborca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pápago','pápago','Sonora','General Plutarco Elías Calles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pápago','pápago','Sonora','Altar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pápago','pápago','Sonora','Caborca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pápago','pápago','Sonora','General Plutarco Elías Calles'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pima','pima del norte','Chihuahua','Madera'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pima','pima del norte','Chihuahua','Moris'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pima','pima del sur','Chihuahua','Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Pima','pima del este','Sonora','Yécora'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca del norte','Puebla','Tlacotepec de Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca del norte','Puebla','Tlacotepec de Benito Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca del centro','Puebla','Tepexi de Rodríguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','San Gabriel Chilac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','San Vicente Coyotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Tepanco de lópez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Tepexi de Rodríguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Zapotitlán Salinas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','San Gabriel Chilac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','San Vicente Coyotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Tepanco de lópez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Tepexi de Rodríguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Zapotitlán Salinas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','San Gabriel Chilac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','San Vicente Coyotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Tepanco de lópez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Tepexi de Rodríguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca de oriente','Puebla','Zapotitlán Salinas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca','popoloca del poniente','Puebla','Santa Inés Ahuatempan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Hueyapan de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Soteapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Hueyapan de Ocampo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Soteapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Popoloca de la Sierra','popoloca de la Sierra','Veracruz Ignacio de la Llave','Tatahuicapan de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Qato’k','mocho','Chiapas','Motozintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Qato’k','tuzanteco','Chiapas','Tuzantán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Campeche','Champotón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','Amatenango de la Frontera'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','San Marcos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','Catazajá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','Bella Vista'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','Frontera Comalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','La Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','La Trinitaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Chiapas','Maravilla Tenejapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’anjob’al','Q’anjob’al','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’eqchí’','Q’eqchí’','Campeche','Campeche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Q’eqchí’','Q’eqchí’','Quintana Roo','Othón P.Blanco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Sayulteco','sayulteco','Veracruz de Ignacio de la Llave','Sayula de Alemán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Sayulteco','sayulteco','Veracruz de Ignacio de la Llave','Sayula de Alemán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Seri','seri','Sonora','Hermosillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Seri','seri','Sonora','Pitiquito'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del oeste','Chihuahua','Chínipas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del oeste','Chihuahua','Maguarichi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del norte','Chihuahua','Bocoyna'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del norte','Chihuahua','Cuautémoc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del norte','Chihuahua','Nonoava'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del norte','Chihuahua','San Francisco de Borja'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara de Cumbres','Chihuahua','Guachochi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del centro','Chihuahua','Balleza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del centro','Chihuahua','Guachochi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del centro','Chihuahua','El Tule'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del centro','Chihuahua','Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarahumara','Tarahumara del sur','Chihuahua','Guadalupe y calvo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Coeneo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Cherán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Charapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Chilchota'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Erongarícuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Los Reyes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Morelia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Nahuatzen'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Nuevo Parangaricutiro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Paracho'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Pátzcuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Quiroga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tangamandapio'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tangancícuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tingambato'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tinguindín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tzintzuntzan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Uruapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Zacapu');
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Coeneo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Cherán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Charapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Chilchota'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Erongarícuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Los Reyes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Morelia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Nahuatzen'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Nuevo Parangaricutiro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Paracho'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Pátzcuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Quiroga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tangamandapio'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tangancícuaro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tingambato'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tinguindín'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Tzintzuntzan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Uruapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tarasco','purépecha','Michoacán de Ocampo','Zacapu'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Teko','Teko','Chiapas','Amatenango de la Frontera'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Teko','Teko','Chiapas','Frontera Comalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Teko','Teko','Chiapas','Mazapa de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Teko','Teko','Chiapas','Amatenango de la Frontera'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Teko','Teko','Chiapas','Frontera Comalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Teko','Teko','Chiapas','Mazapa de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del sur','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del sur','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del sur','Hidalgo','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del sur','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Tlachichilco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Zontecomatlán de López y Fuentes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Tlachichilco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua','tepehua del oeste','Veracruz de Ignacio de la Llave','Zontecomatlán de López y Fuentes'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del norte','tepehua del norte','Chihuahua','Guadalupe y Calvo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del norte','tepehua del norte','Chihuahua','Guachochi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del sur','tepehua del sur alto','Durango','Pueblo Nuevo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del sur','tepehua del sur alto','Nayarit','Acaponeta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del sur','tepehua del sur alto','Nayarit','Huajicori'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del sur','tepehua del sur alto','Sinaloa','Escuinapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del sur','tepehua del sur bajo','Durango','Mezquital'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del sur','tepehua del sur bajo','Zacatecas','Valparaíso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tepehua del sur','tepehua del sur central','Durango','Mezquital'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Texistepequeño','texistepequeño','Veracruz de Ignacio de la Llave','Texistepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tojolabal','tojolabal','Chiapas','Altamirano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tojolabal','tojolabal','Chiapas','Comitán de Domínguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tojolabal','tojolabal','Chiapas','La Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tojolabal','tojolabal','Chiapas','La Trinitaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tojolabal','tojolabal','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tojolabal','tojolabal','Chiapas','Maravilla Tenejapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tojolabal','tojolabal','Chiapas','Ocosingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Chiconquiaco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Misantla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Naolinco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','otonaco del sureste','Veracruz de Ignacio de la Llave','Yecuatla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Naupan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlaola'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Naupan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlaola'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Francisco Z.Mena'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Jalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Naupan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlacuilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlaxco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Tlaola'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Xicotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Puebla','Zihuateutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del norte','Veracruz de Ignacio de la Llave','Ixhuatlán de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco del Cerro Xinolatépetl','Puebla','Huauchinango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central alto','Veracruz de Ignacio de la Llave','Filomeno Mata'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Cazones'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Coatzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Espinal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Martínez de la Torre'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Papantla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Poza Rica de Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tihuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tecolutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tenampulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco de la costa','Veracruz de Ignacio de la Llave','Tuxpam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco del río Necaxa','Puebla','Jopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Ahuacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Atlequizayán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Amixtlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Camocuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Cuetzalan del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hermenegildo Galeana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hueytamalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hueytlalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Huitzilan de Serdán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Ixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Jonotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Jopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Nauzontla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','San Felipe Tepantlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tepango de Rodríguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tepetzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tuzamapan de Galeana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Zacapoaxtla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Zapotitlán de Méndez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Chumatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coahuitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coxquihui'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Mecatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Zozocolco de Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Ahuacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Atlequizayán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Amixtlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Camocuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Cuetzalan del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hermenegildo Galeana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hueytamalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hueytlalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Huitzilan de Serdán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Ixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Jonotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Jopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Nauzontla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','San Felipe Tepantlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tepango de Rodríguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tepetzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tuzamapan de Galeana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Zacapoaxtla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Zapotitlán de Méndez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Chumatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coahuitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coxquihui'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Mecatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Zozocolco de Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Ahuacatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Atlequizayán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Amixtlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Camocuautla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Cuetzalan del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hermenegildo Galeana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Huehuetla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hueytamalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Hueytlalpan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Huitzilan de Serdán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Ixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Jonotla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Jopala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Nauzontla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','San Felipe Tepantlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tepango de Rodríguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tepetzintla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Tuzamapan de Galeana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Zacapoaxtla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Puebla','Zapotitlán de Méndez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Chumatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coahuitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coxquihui'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Coyutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Mecatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Totonaco','totonaco central del sur','Veracruz de Ignacio de la Llave','Zozocolco de Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Triqui','triqui de San Juan Copala','Oaxaca','Santiago Juxtlahuaca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Triqui','triqui de la media','Oaxaca','San Martín Itunyuso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Triqui','triqui de la alta','Oaxaca','Putla Villa de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Triqui','triqui de la baja','Oaxaca','Constancia del Rosario'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Triqui','triqui de la baja','Oaxaca','Putla Villa de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlahuica','tlahuica','Estado de México','Ocuilán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del sur','Guerrero','Azoyú'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del sur','Guerrero','Marquelia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del oeste','Guerrero','Quechultenango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco central bajo','Guerrero','Iliatenco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco central bajo','Guerrero','Malinaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco central bajo','Guerrero','San Luis Acatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del suroeste','Guerrero','Acatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del suroeste','Guerrero','Ayutla de los Libres'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del suroeste','Guerrero','San Luis Acatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del suroeste','Guerrero','Zapotitlán Tablas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del este','Guerrero','Acapulco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del este','Guerrero','Atlamajalcingo del Monte'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del este','Guerrero','Metlatónoc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del este','Guerrero','Tlapa de Comonfort'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del centro','Guerrero','Tlacoapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del norte','Guerrero','Acatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del norte','Guerrero','Copanatoyac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del norte','Guerrero','Tlapa de Comonfort'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del norte','Guerrero','Zapotitlán Tablas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del noroeste alto','Guerrero','Atlixtac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tlapaneco','tlapaneco del noroeste alto','Guerrero','Atlixtac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Acala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Aldama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Amatenango del Valle'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Chalchihuitán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Chamula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Chanal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Chenalhó'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Chiapa de Corzo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Chiapilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Comitán de Domínguez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Huixtán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Ixtapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Larráinzar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Osumacinta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Oxchuc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Patelhó'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Pueblo Nuevo Solistahuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','San Cristobal de las Casas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','San Lucas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','San Juan Cancuc'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Soyaló'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Tenejapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Totolapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Tuxtla Gutiérrez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal de occidente','Chiapas','Zinacantán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Catazajá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','La Libertad'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Ocosingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Palenque'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','sabanilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Salto de Agua'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Sitalá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Tila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Tumbalá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Chiapas','Yajalón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del norte','Tabasco','Emiliano Zapata'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Chiapas','Altamirano'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Chiapas','Benemérito de las Americas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Chiapas','La Independencia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Chiapas','Maravilla Tenejapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Chiapas','Marqués de comillas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Chiapas','Ocosingo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del oriente','Tabasco','Balancán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Ángel Albino Corzo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Cintalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Chicomuselo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Frontera Comalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','La Concordia'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','La Trinitaria'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Montecristo de Guerrero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Socoltenango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Tzimol'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tseltal','tseltal del sur','Chiapas','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del este alto','Chiapas','Huixtán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del este alto','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del noroeste','Chiapas','Aldama'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del noroeste','Chiapas','Chalchihuitán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del noroeste','Chiapas','Chenalhó'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del noroeste','Chiapas','Mitontic'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del noroeste','Chiapas','Pantelhó'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte bajo','Chiapas','Acala'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte bajo','Chiapas','Totolapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte bajo','Chiapas','Venustiano Carranza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del centro','Chiapas','Chamula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del centro','Chiapas','Las Margaritas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del centro','Chiapas','Teopisca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil de este bajo','Chiapas','Berriozabal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil de este bajo','Chiapas','Ixtapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil de este bajo','Chiapas','San Lucas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil de este bajo','Chiapas','Zinacantán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Amatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Bochi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','El Bosque'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Huitiupán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Ixhuatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Jitotol'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Larráinzar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Ocozocoautla de Espinosa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Pueblo Nuevo Solistahuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Sabanilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','San Andrés Duraznal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Santiago el Pinar'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Simojovel'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil del norte alto','Chiapas','Soyaló'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Tsotsil','tsotsil de los Altos','Chiapas','San Cristóbal de las Casas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Yaqui','yaqui','Sonora','Bácum'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Yaqui','yaqui','Sonora','Cajeme'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Yaqui','yaqui','Sonora','Empalme'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Yaqui','yaqui','Sonora','Guaymas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Yaqui','yaqui','Sonora','San Ignacio Río Muerto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Texmelucan','Oaxaca','San Lorenzo Texmelucan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, noroeste bajo','Oaxaca','Villa Sola de Vega'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santa María Zaniza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santiago Textitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Villa Sola de Vega'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santa María Zaniza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Santiago Textitlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, noroeste','Oaxaca','Villa Sola de Vega'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de San Antonino el Alto','Oaxaca','San Antonino el Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, oeste bajo','Oaxaca','San Miguel Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, oeste bajo','Oaxaca','Santa Cruz Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, norooeste alto','Oaxaca','Santa María Lachixío'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de la Sierra sur, norooeste alto','Oaxaca','San Vicente Lachixío'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de San Miguel Aloápam','Oaxaca','Zapoteco de San Miguel Aloápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste','Oaxaca','Abejones'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste','Oaxaca','Santa María Jaltianguis'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Nuevo Zoquiápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Juan Evangelista Analco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Miguel del Río'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Pablo Malcuiltianguis'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Santa Catarina Ixtepeji'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Nuevo Zoquiápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Juan Evangelista Analco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Miguel del Río'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','San Pablo Malcuiltianguis'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del oeste','Oaxaca','Santa Catarina Ixtepeji'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','Capulálpam de Méndez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','Guelatao de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','Natividad'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','San Juan Chicomezúchil'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','San Miguel Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','Santa Catarina Lachatao'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','Santa María Yavesía'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, bajo','Oaxaca','Santiago Xiacuí'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Ixtlán de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Ildelfonso Villa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Juan Yaeé'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Juan Yatzona'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','San Miguel Yotao'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Santiago Lalopa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Domingo Roayaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Villa Talea de Castro'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del noroeste bajo','Oaxaca','Tanetze de Zaragoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de Santa María Temaxcalapa','Oaxaca','Santa María Temaxcalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Comaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Lalana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','Santiago Choápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Comaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Lalana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','Santiago Choápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Comaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','San Juan Lalana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco del oeste de Tuxtepec','Oaxaca','Santiago Choápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de Santiago Yaveo','Oaxaca','Santiago Yaveo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco de Santiago Yaveo','Oaxaca','Santiago Yaveo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del este','Oaxaca','San Ildefonso Villa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Andrés Yaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Cristóbal Lachirioag'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Ildefonso Villa Alta'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste','Oaxaca','San Melchor Betaza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Andrés Solaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Bartolomé Zoogocho'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santiago Zoochila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santa María Yalina'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Andrés Solaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Bartolomé Zoogocho'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santiago Zoochila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santa María Yalina'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Andrés Solaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Bartolomé Zoogocho'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','San Baltazar Yatzachi el Bajo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santiago Zoochila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste medio','Oaxaca','Santa María Yalina'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Juan Tabaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Andrés Solaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Juan Tabaá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','Zapoteco serrano, del sureste alto','Oaxaca','San Andrés Solaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Santiago Laxopa','Oaxaca','Santiago Laxopa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Santiago Laxopa','Oaxaca','Santiago Laxopa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Francisco Cajonos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Mateo Cajonos.'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Pablo Yaganiza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Francisco Cajonos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Mateo Cajonos.'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del sureste bajo','Oaxaca','San Pablo Yaganiza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del oeste medio','Oaxaca','Santa Ana Yareni'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco serrano, del oeste medio','Oaxaca','Teococuilco de Marcos Pérez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles del sur','Oaxaca','Coatecas Altas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles del sur','Oaxaca','Heróica Ciudad de Ejutla de Crespo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles del sur','Oaxaca','San José del Progreso'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de San Vicente Coatlán','Oaxaca','San Vicente Coatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','Miahuatlán de Porfirio Díaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','San Jerónimo Coatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','San Miguel Coatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del este bajo','Oaxaca','San Pablo Coatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','San Baltazar Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','San Jerónimo Coatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','Santa María Tonameca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','Santo Domingo de Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','San Baltazar Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','San Jerónimo Coatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','Santa María Tonameca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','Santo Domingo de Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','San Baltazar Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','San Jerónimo Coatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','Santa María Tonameca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa oeste','Oaxaca','Santo Domingo de Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Candelaria Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Pluma Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','San Agustín Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','San Bartolomé Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','San Pedro Pochutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Colotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Huatulco; Santa María Tonameca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Candelaria Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Pluma Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','San Agustín Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','San Bartolomé Loxicha'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','San Pedro Pochutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Colotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa central','Oaxaca','Santa María Huatulco; Santa María Tonameca'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, central','Oaxaca',' Miahuatlán de Porfirio Díaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','San Andrés Paxtlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santa Cruz Xitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santa Catarina Cuixtla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santa Lucía Miahuatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, central','Oaxaca','Santo Tomás Tamazulapan'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Cristóbal Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San José Lachiguiri'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Juan Mixtepec Distrito 26'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mixtepec Distrito 26'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mártir Quiéchapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Cristóbal Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San José Lachiguiri'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Juan Mixtepec Distrito 26'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mixtepec Distrito 26'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste','Oaxaca','San Pedro Mártir Quiéchapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catalina Quierí'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catarina Quioquitani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catalina Quierí'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catarina Quioquitani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catalina Quierí'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, noroeste medio','Oaxaca','Santa Catarina Quioquitani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Quiavicuzas','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Quiavicuzas','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Cristóbal Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Francisco Logueche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Ildefonso Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Luis Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Oaxaca: San Juan Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Marcial Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Mateo Piñas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Miguel Suchixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Pedro El Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Sebastián Río Hondo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santa María Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santo Domingo Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Oaxaca: San Juan Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Marcial Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Mateo Piñas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Miguel Suchixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Pedro El Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Sebastián Río Hondo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santa María Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santo Domingo Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Oaxaca: San Juan Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Marcial Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Mateo Piñas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Miguel Suchixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Pedro El Alto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','San Sebastián Río Hondo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santa María Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del norte','Oaxaca','Santo Domingo Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Mixtepec','Oaxaca','San Cristóbal Amatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste bajo','Oaxaca','Santiago Xánica'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste bajo','Oaxaca','Santiago Xánica.'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca',' San Francisco Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca','San Juan Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca',' San Francisco Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca','San Juan Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca',' San Francisco Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la Sierra sur, del sureste alto','Oaxaca','San Juan Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Santa María Quiegolani','Oaxaca','Santa María Quiegolani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de San Bartolo Yautepec','Oaxaca','San Bartolo Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Asunción Tlacolulita','Oaxaca','Asunción Tlacolulita'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa este','Oaxaca','San Francisco Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa este','Oaxaca','San Juan Ozolotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa este','Oaxaca','San Miguel del Puerto'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la costa este','Oaxaca','Santiago Xánica'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca',' Magdalena Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Bernardo Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Cuatro Venados'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Huixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca',' Magdalena Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Bernardo Mixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Cuatro Venados'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, oeste','Oaxaca','San Pablo Huixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de San Felipe Tejalápam','Oaxaca','San Felipe Tejalápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, noroeste','Oaxaca','San Agustín Etla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, noroeste','Oaxaca','San Andrés Zautla; San Pablo Etla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, noroeste','Oaxaca','Santa María Atzompa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, noroeste','Oaxaca','Santo Tomás Mazaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, noroeste','Oaxaca','Villa de Etla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, norte','Oaxaca','San Andrés Huayápam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, norte','Oaxaca','Santo Domingo Tonaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, norte','Oaxaca','Tlalixtac de Cabrera'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Oaxaca de Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','San Antonio de la Cal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','San Raymundo Jalpan; San Sebastián Tutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Santa Cruz Xoxocotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Santa Lucía del Camino; Santa María Guelacé'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste medio','Oaxaca','Santa María del Tule'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste bajo','Oaxaca',' San Bartolo Coyotepec; ;'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste bajo','Oaxaca','Santa María Coyotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noroeste bajo','Oaxaca',' Villa de Zaachila'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Asunción Ocotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Magdalena Ocotlán; San Pedro Mártir'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Asunción Ocotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste medio','Oaxaca','Magdalena Ocotlán; San Pedro Mártir'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Zimatlán de Álvarez','Oaxaca','Zimatlán de Álvarez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del oeste central','Oaxaca','Santa Ana Zegache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del oeste central','Oaxaca','Santa Ana Zegache'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del centro','Oaxaca','Santo Tomás Jalieza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, de suroeste alto','Oaxaca','Santiago Apóstol'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','Ocotlán de Morelos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','San Antonino Castillo Velasco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','San Jerónimo Taviche'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','San Martín de los Cansecos'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','Santa Catarina Minas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del suroeste central','Oaxaca','Santa Lucía Ocotlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del centro bajo','Oaxaca','San Miguel Tilquiápam.'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Magdalena Teitipac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Bartolomé Quialana'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Francisco Lachigoló'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Jerónimo Tlacochahuaya'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Juan Teitipac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Lucas Quiavini'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Martín Tilcajete'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Sebastián Abasolo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','San Sebastián Teitipac'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santa Ana del Valle'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santa Cruz Papalutla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santo Tomás Jalieza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Santo Tomás Jalieza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Tlacolula de Matamoros'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del norte central','Oaxaca','Villa Díaz Ordaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este central','Oaxaca','San Dionisio Ocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este central','Oaxaca','Santiago Matatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este central','Oaxaca','San Dionisio Ocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este central','Oaxaca','Santiago Matatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de San Baltazar Chichicapam','Oaxaca','San Baltazar Chichicapam'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Dionisio Ocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Juan del Río; San Lorenzo Albarradas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pablo Villa de Mitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pedro Totolapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','Santiago Matatlán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Dionisio Ocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Juan del Río; San Lorenzo Albarradas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pablo Villa de Mitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','San Pedro Totolapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del este medio','Oaxaca','Santiago Matatlán');
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','Nejapa de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Pedro Quiatoni'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','Nejapa de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Pedro Quiatoni'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','Nejapa de Madero'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Carlos Yautepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Sierra sur, del noreste alto','Oaxaca','San Pedro Quiatoni'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Lorenzo Albarradas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Pablo Villa de Mitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Santo Domingo Albarradas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Villa Díaz Ordaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Lorenzo Albarradas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','San Pablo Villa de Mitla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Santo Domingo Albarradas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Valles, del noreste','Oaxaca','Villa Díaz Ordaz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Guevea de Humbolt'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santa María Totolapilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santiago Lachiguiri'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Guevea de Humbolt'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santa María Totolapilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, alto','Oaxaca','Santiago Lachiguiri'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Guevea de Humboldt'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Santa María Guienagati'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Guevea de Humboldt'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la montaña del Istmo, bajo','Oaxaca','Santa María Guienagati'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Petapa','Oaxaca',' Santa María Petapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Petapa','Oaxaca',' Santo Domingo Petapa.'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Petapa','Oaxaca',' Santa María Petapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de Petapa','Oaxaca',' Santo Domingo Petapa.'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca',' Asunción Ixtaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Ciudad Ixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Chahuites'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','El Espinal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Juchitán de Zaragoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Magdalena Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Reforma de Pineda'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Salina Cruz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Blas Atempa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Francisco Ixhuatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Juan Guichicovi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Comitancillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Huilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Tapanatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Jalapa del Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Mixtequilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Xadani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santiago Laollaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Chihuitán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Ingenio'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Tehuantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Zanatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Unión Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca',' Asunción Ixtaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Ciudad Ixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Chahuites'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','El Espinal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Juchitán de Zaragoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Magdalena Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Reforma de Pineda'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Salina Cruz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Blas Atempa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Francisco Ixhuatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Juan Guichicovi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Comitancillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Huilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Tapanatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Jalapa del Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Mixtequilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Xadani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santiago Laollaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Chihuitán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Ingenio'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Tehuantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Zanatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Unión Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca',' Asunción Ixtaltepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Ciudad Ixtepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Chahuites'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','El Espinal'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Juchitán de Zaragoza'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Magdalena Tlacotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Reforma de Pineda'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Salina Cruz'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Blas Atempa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Francisco Ixhuatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Juan Guichicovi'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Comitancillo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Huilotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','San Pedro Tapanatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Jalapa del Marqués'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Mixtequilla'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santa María Xadani'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santiago Laollaga'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Chihuitán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Ingenio'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Tehuantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Santo Domingo Zanatepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zapoteco','zapoteco de la planicie costera','Oaxaca','Unión Hidalgo'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del centro','Chiapas','Copainalá'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del centro','Chiapas','Ostuacán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del centro','Chiapas','Tecpatán.'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del este','Chiapas','Ixhuatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del este','Chiapas','Ocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del este','Chiapas','Tapilula'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte alto','Chiapas',' Amatán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte alto','Chiapas','Chapultenango'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte alto','Chiapas','Ixtacomitán'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte alto','Chiapas','Juárez'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte alto','Chiapas','Pichucalco'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte alto','Chiapas','Solosuchiapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte bajo','Chiapas','Ocotepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte bajo','Chiapas','Pantepec'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte bajo','Chiapas','Rayón'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del norte bajo','Chiapas','Tapalapa'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del noroeste','Chiapas','Francisco León'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del sureste','Chiapas','Jitotol'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del oeste','Oaxaca','San Miguel Chimalapas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del oeste','Oaxaca','Santa María Chimalapas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del oeste','Oaxaca','San Miguel Chimalapas'); 
+ insert into lenguas (`lengua`, `nombre`, `estado`, `municipio`) values
+('Zoque','zoque del oeste','Oaxaca','Santa María Chimalapas');
