@@ -20,7 +20,7 @@ if (isset($_POST['but_submit'])) {
             $_SESSION['uname'] = $uname;
             header('Location: home.php');
         } else {
-            echo "Invalid username and password";
+            echo "Contraseña o usuario incorrecto";
         }
     }
 }
@@ -36,15 +36,17 @@ if (isset($_POST['but_submit'])) {
     <div class="container">
         <form method="post" action="index.php">
             <div id="div_login">
-                <h1>Login</h1>
+                <h1>Iniciar sesion</h1>
                 <div>
-                    <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Username" />
+                    Nombre de usuario:
+                    <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Nombre" />
                 </div>
                 <div>
-                    <input type="password" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Password" />
+                    Contraseña
+                    <input type="password" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Contraseña" />
                 </div>
                 <div>
-                    <input type="submit" value="Submit" name="but_submit" id="but_submit" />
+                    <input type="submit" value="Entrar" name="but_submit" id="but_submit" />
                 </div>
             </div>
         </form>
