@@ -1,3 +1,8 @@
+.echo{
+    text-align: right;
+    color:white;
+}
+
 
 /* Container */
 .container{
@@ -19,15 +24,17 @@
     margin-top: 0px;
     font-weight: normal;
     padding: 10px;
-    background-color: cornflowerblue;
+    background-color: rgb(91.8, 123.67, 214.2);
     color: white;
     font-family: sans-serif;
+     text-align: center;
 }
 
 #div_login div{
     clear: both;
     margin-top: 10px;
     padding: 5px;
+
 }
 
 #div_login .textbox{
@@ -38,13 +45,14 @@
 #div_login input[type=submit]{
     padding: 7px;
     width: 100px;
-    background-color: lightseagreen;
+    background-color: rgb(91.8, 123.67, 214.2);
     border: 0px;
     color: white;
-}
+  margin-left: 40%;
+    }
 
 /* media */
-@media screen and (max-width:720px){
+@media screen and (max-width:800px){
     .container{
         width: 100%;
     }
